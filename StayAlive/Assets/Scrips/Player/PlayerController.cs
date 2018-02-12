@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
     void Movement()
     {
-        transform.Translate(Vector3.forward * Input.GetAxis("Vertical") * Movespeed);
-        transform.Translate(Vector3.left * Input.GetAxis("Horizontal") * -Movespeed);
+        transform.Translate(new Vector3(-1,0,1) * Input.GetAxis("Vertical") * Movespeed);
+        transform.Translate(new Vector3(1, 0, 1) * Input.GetAxis("Horizontal") * Movespeed);
     }
 }
