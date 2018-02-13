@@ -6,6 +6,9 @@ public class Enemy_Easy : MonoBehaviour
 {
     public Transform target;
     private Transform selfLocation;
+    private bool canMove;
+    public float moveTimer;
+    private float moveTimerCount;
     public GameObject bloodFab;
     public int moveSpeed;
     public int rotationSpeed;
@@ -27,12 +30,19 @@ public class Enemy_Easy : MonoBehaviour
         animator = GetComponent<Animator>();
         GameObject go = GameObject.FindGameObjectWithTag("Player");
         target = go.transform;
+        canMove = false;
+        moveTimerCount = moveTimer;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Normal"))
+        moveTimerCount = moveTimerCount - Time.deltaTime;
+        if(moveTimerCount < 0)
+        {
+            canMove = true;
+        }
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Normal")|| canMove == true)
         {
             Debug.DrawLine(target.position, myTransform.position, Color.red);
 
