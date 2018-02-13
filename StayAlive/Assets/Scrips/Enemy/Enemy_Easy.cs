@@ -4,19 +4,32 @@ using UnityEngine;
 
 public class Enemy_Easy : MonoBehaviour
 {
-    public Transform target;
+    private Transform target;
     private Transform selfLocation;
-    private bool canMove;
-    public float moveTimer;
     private float moveTimerCount;
-    public GameObject bloodFab;
-    public int moveSpeed;
-    public int rotationSpeed;
-    public int maxdistance;
-    private Transform myTransform;
     private Animator animator;
-    public string Level_Name;
+    private Transform myTransform;
     private EnemyResponse MoveInVision;
+
+    [Header("Start settings")]
+    public bool canMove;
+    [SerializeField, Tooltip("If true, enemy can walk")]
+    public float moveTimer;
+    [SerializeField, Tooltip("Time the enemy will wait after spawning")]
+
+    [Header("Level and particles")]
+    public GameObject bloodFab;
+    public string Level_Name;
+
+    [Header("Movement settings")]
+    [SerializeField, Tooltip("Set movementspeed")]
+    public int moveSpeed;
+    [SerializeField, Tooltip("Set rotationspeed")]
+    public int rotationSpeed;
+    [SerializeField, Tooltip("Max distance of response to player")]
+    public int maxdistance;
+    
+    
 
     void Awake()
     {
@@ -42,7 +55,7 @@ public class Enemy_Easy : MonoBehaviour
         {
             canMove = true;
         }
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Normal")|| canMove == true)
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Normal") && canMove == true)
         {
             Debug.DrawLine(target.position, myTransform.position, Color.red);
 
