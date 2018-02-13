@@ -21,10 +21,9 @@ public class GunController : MonoBehaviour {
 
     void Update () {
         RotateController();
-
+        fireTimer = fireTimer + Time.deltaTime;
         if (Input.GetAxis("joystick button 10") > 0 || Input.GetKey("space"))
-        {
-            fireTimer = fireTimer + Time.deltaTime;
+        {       
             if(fireTimer > fireRate)
             {
                 Fire1();
