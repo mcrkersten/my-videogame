@@ -57,6 +57,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 1186bcdcde33f3f43b65171597c9b66f, type: 2}
   m_StaticBatchInfo:
@@ -113,6 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smokePrefab: {fileID: 1272416188072722, guid: dab010d93b2b288439ff41a7ca80a866,
     type: 2}
+  BulletPosition: {fileID: 0}
 --- !u!135 &135529634009070416
 SphereCollider:
   m_ObjectHideFlags: 1
