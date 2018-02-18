@@ -13,7 +13,7 @@ public class Bullet : MonoBehaviour {
 
         if (coll.gameObject.tag == "Enemy" || coll.gameObject.tag == "Wall" || coll.gameObject.tag == "EnemyBullet" || coll.gameObject.tag == "Bullet")
         {
-            if (coll.gameObject.tag == "Wall" || coll.gameObject.tag == "EnemyBullet")
+            if (coll.gameObject.tag == "Wall" || coll.gameObject.tag == "EnemyBullet" || coll.gameObject.tag == "Enemy")
             {
                 smoke();
                 transform.DetachChildren();

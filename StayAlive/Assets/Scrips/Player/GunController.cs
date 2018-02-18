@@ -10,6 +10,8 @@ public class GunController : MonoBehaviour {
     public int bulletSpeed;
     public float bulletTime;
     private float fireTimer;
+    private bool gun1 = false;
+    private bool gun2 = true;
     public float fireRate;
 
 
@@ -23,11 +25,21 @@ public class GunController : MonoBehaviour {
         RotateController();
         fireTimer = fireTimer + Time.deltaTime;
         if (Input.GetAxis("joystick button 10") > 0 || Input.GetKey("space"))
-        {       
-            if(fireTimer > fireRate)
+        {
+            if (fireTimer > fireRate)
             {
-                Fire1();
-                Fire2();
+                if (gun1 == true && gun2 == false)
+                {
+                    Fire1();
+                    gun1 = false;
+                    gun2 = true;
+                }
+                else if (gun2 == true && gun1 == false)
+                {
+                    Fire2();
+                    gun2 = false;
+                    gun1 = true;
+                }
                 fireTimer = 0;
             }
         }

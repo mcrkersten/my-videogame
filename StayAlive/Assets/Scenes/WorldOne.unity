@@ -490,7 +490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camTransform: {fileID: 167471189}
-  shakeDuration: 3.2
+  shakeDuration: 3.4
   shakeAmount: 0.1
   decreaseFactor: 1
 --- !u!1 &171395007
@@ -1377,6 +1377,10 @@ Prefab:
     - target: {fileID: 100000, guid: 38377260239773f439f1f1dce90e647e, type: 3}
       propertyPath: m_TagString
       value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 38377260239773f439f1f1dce90e647e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 38377260239773f439f1f1dce90e647e, type: 3}
@@ -46192,6 +46196,10 @@ Prefab:
     - target: {fileID: 23027007281131568, guid: cf3232148f22eb048aa68dbcb2480482,
         type: 2}
       propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1702624989677016, guid: cf3232148f22eb048aa68dbcb2480482, type: 2}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
