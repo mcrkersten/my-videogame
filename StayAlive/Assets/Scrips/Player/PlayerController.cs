@@ -4,21 +4,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    Manager managerScript;
+
     public float Movespeed = .1f;
 
     // Use this for initialization
-    private void Start()
-    {
-        managerScript = GameObject.Find("GameController").GetComponent<Manager>();
-    }
+
     // Update is called once per frame
     void Update()
     {
-        if(managerScript.canMove == true)
-        {
-            Movement();
-        }  
+        Movement();
     }
 
     void Movement()

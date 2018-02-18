@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Manager : MonoBehaviour {
+public class ManagerLayerLevels : MonoBehaviour {
 
     
     private int TotalEnemies;
@@ -37,28 +37,26 @@ public class Manager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         TotalEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        TotalSpawnPoints = levels[levelCounter].transform.childCount;
-        if (TotalEnemies == 0)
+        TotalSpawnPoints = GameObject.FindGameObjectsWithTag("EnemySpawn").Length;
+
+        if (TotalEnemies == 0 && TotalSpawnPoints == 0)
         {
-            if(TotalSpawnPoints == 1)
+            canMove = false;
+            if (OneLevelanimation && TimeWaited < 1)
             {
-                canMove = false;
-                if (OneLevelanimation && TimeWaited < 1)
-                {
-                    NextFloor();
-                    OneLevelanimation = false;
-                }
-                TimeWaited = TimeWaited - Time.deltaTime;
-                if (TimeWaited < 0)
-                {
-                    Physics.IgnoreCollision(levelFloor[levelCounter].GetComponent<MeshCollider>(), Player.GetComponent<Collider>());
-                    anim[levelCounter].SetBool("NextLevel", true);
-                    levelCounter = levelCounter + 1;
-                    TimeWaited = TimeWait;
-                    OneLevelanimation = true;
-                    canMove = true;
-                }
+                NextFloor();
+                OneLevelanimation = false;
             }
+            TimeWaited = TimeWaited - Time.deltaTime;
+            if (TimeWaited < 0)
+            {
+                Physics.IgnoreCollision(levelFloor[levelCounter].GetComponent<MeshCollider>(), Player.GetComponent<Collider>());
+                anim[levelCounter].SetBool("NextLevel", true);
+                levelCounter = levelCounter + 1;
+                TimeWaited = TimeWait;
+                OneLevelanimation = true;
+                canMove = true;
+            }        
         }
     }
 

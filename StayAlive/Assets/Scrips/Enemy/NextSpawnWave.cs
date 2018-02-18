@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NextSpawnWave : MonoBehaviour {
     public GameObject[] Enemies;
-    public Manager manager;
+    public ManagerLayerLevels manager;
     [SerializeField, Tooltip("Game-Breaking if true at launch")]
     public bool spawnEnemies;
     public int levelNumber;
