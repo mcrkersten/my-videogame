@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 124819039894579630}
   - component: {fileID: 81885801972067986}
   - component: {fileID: 114974799891684132}
+  - component: {fileID: 114179551321522224}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1952584679044442}
   m_LocalRotation: {x: 0.35355338, y: -0.35355338, z: 0.1464466, w: 0.8535535}
-  m_LocalPosition: {x: 20, y: 30, z: -20}
+  m_LocalPosition: {x: 19.92, y: 30, z: -14.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -52,7 +53,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.90588236, g: 0.49803922, b: 0.40392157, a: 1}
+  m_BackGroundColor: {r: 0.103773594, g: 0.103773594, b: 0.103773594, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -74,6 +75,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -85,13 +87,28 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1952584679044442}
   m_Enabled: 1
+--- !u!114 &114179551321522224
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1952584679044442}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebccf979a820d9c498894946408c44ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camTransform: {fileID: 4504482282281208}
+  shakeDuration: 3.4
+  shakeAmount: 0.1
+  decreaseFactor: 1
 --- !u!114 &114974799891684132
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1952584679044442}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac15fc335fded4f4c9b2c5bb5d633681, type: 3}
   m_Name: 
