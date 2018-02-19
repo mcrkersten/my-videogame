@@ -35625,6 +35625,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 23027007281131568, guid: cf3232148f22eb048aa68dbcb2480482,
         type: 2}
       propertyPath: m_DynamicOccludee
@@ -35639,6 +35640,8 @@ Prefab:
       propertyPath: fireRate
       value: 0.5
       objectReference: {fileID: 0}
+=======
+>>>>>>> Stashed changes
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf3232148f22eb048aa68dbcb2480482, type: 2}
   m_IsPrefabParent: 0
