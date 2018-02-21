@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     // Use this for initialization
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Movement();
     }
