@@ -7,7 +7,7 @@ public class Enemy_Easy : MonoBehaviour
     private Transform target;
     private Transform selfLocation;
     private float moveTimerCount;
-    private Animator animator;
+    private Animator spawnAnimation;
     private Transform myTransform;
     private EnemyResponse MoveInVision;
 
@@ -17,13 +17,17 @@ public class Enemy_Easy : MonoBehaviour
     public float moveTimer;
     [SerializeField, Tooltip("Time the enemy will wait after spawning")]
 
-    [Header("Level and particles")]
+    [Header("Level | particles | StatusAnimations")]
     public GameObject bloodFab;
     public string Level_Name;
+    public Animator Detection;
 
     [Header("Movement settings")]
     [SerializeField, Tooltip("Set movementspeed")]
     public int moveSpeed;
+    [SerializeField, Tooltip("Set acceleration speed")]
+    public float acceleration;
+    private float actualMovespeed;
     [SerializeField, Tooltip("Set rotationspeed")]
     public int rotationSpeed;
     [SerializeField, Tooltip("Max distance of response to player")]
@@ -40,7 +44,7 @@ public class Enemy_Easy : MonoBehaviour
     void Start () {
         MoveInVision = GetComponent<EnemyResponse>();
         selfLocation = GetComponent<Transform>();
-        animator = GetComponent<Animator>();
+        spawnAnimation = GetComponent<Animator>();
         GameObject go = GameObject.FindGameObjectWithTag("Player");
         target = go.transform;
         canMove = false;
@@ -55,7 +59,7 @@ public class Enemy_Easy : MonoBehaviour
         {
             canMove = true;
         }
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Normal") && canMove == true)
+        if (spawnAnimation.GetCurrentAnimatorStateInfo(0).IsName("Normal") && canMove == true)
         {
             Debug.DrawLine(target.position, myTransform.position, Color.red);
 
@@ -64,7 +68,12 @@ public class Enemy_Easy : MonoBehaviour
             if (Vector3.Distance(target.position, myTransform.position) > maxdistance)
             {
                 //Move towards target
-                myTransform.position += myTransform.forward * moveSpeed * Time.deltaTime;
+                if(actualMovespeed < moveSpeed)
+                {
+                    actualMovespeed = actualMovespeed + acceleration;
+                }
+                Detection.SetBool("Detected", true);
+                myTransform.position += myTransform.forward * actualMovespeed * Time.deltaTime;
             }
         }
     }
