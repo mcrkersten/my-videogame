@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -19,5 +20,13 @@ public class PlayerController : MonoBehaviour
     {
         transform.Translate(new Vector3(-1,0,1) * Input.GetAxis("Vertical") * Movespeed);
         transform.Translate(new Vector3(1, 0, 1) * Input.GetAxis("Horizontal") * Movespeed);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "NextLevel")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 }

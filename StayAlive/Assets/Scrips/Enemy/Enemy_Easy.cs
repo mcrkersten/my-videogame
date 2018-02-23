@@ -45,8 +45,6 @@ public class Enemy_Easy : MonoBehaviour
         MoveInVision = GetComponent<EnemyResponse>();
         selfLocation = GetComponent<Transform>();
         spawnAnimation = GetComponent<Animator>();
-        GameObject go = GameObject.FindGameObjectWithTag("Player");
-        target = go.transform;
         canMove = false;
         moveTimerCount = moveTimer;
     }
@@ -54,26 +52,39 @@ public class Enemy_Easy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moveTimerCount = moveTimerCount - Time.deltaTime;
-        if(moveTimerCount < 0)
+
+        GameObject go = GameObject.FindGameObjectWithTag("Player");
+        if (go == null)
         {
-            canMove = true;
+            //NOTHING
         }
-        if (spawnAnimation.GetCurrentAnimatorStateInfo(0).IsName("Normal") && canMove == true)
+        else
         {
-            Debug.DrawLine(target.position, myTransform.position, Color.red);
+            target = go.transform;
 
-            myTransform.rotation = Quaternion.Slerp(myTransform.rotation, Quaternion.LookRotation(target.position - myTransform.position), rotationSpeed * Time.deltaTime);
 
-            if (Vector3.Distance(target.position, myTransform.position) > maxdistance)
+
+            moveTimerCount = moveTimerCount - Time.deltaTime;
+            if (moveTimerCount < 0)
             {
-                //Move towards target
-                if(actualMovespeed < moveSpeed)
+                canMove = true;
+            }
+            if (spawnAnimation.GetCurrentAnimatorStateInfo(0).IsName("Normal") && canMove == true)
+            {
+                Debug.DrawLine(target.position, myTransform.position, Color.red);
+
+                myTransform.rotation = Quaternion.Slerp(myTransform.rotation, Quaternion.LookRotation(target.position - myTransform.position), rotationSpeed * Time.deltaTime);
+
+                if (Vector3.Distance(target.position, myTransform.position) > maxdistance)
                 {
-                    actualMovespeed = actualMovespeed + acceleration;
+                    //Move towards target
+                    if (actualMovespeed < moveSpeed)
+                    {
+                        actualMovespeed = actualMovespeed + acceleration;
+                    }
+                    Detection.SetBool("Detected", true);
+                    myTransform.position += myTransform.forward * actualMovespeed * Time.deltaTime;
                 }
-                Detection.SetBool("Detected", true);
-                myTransform.position += myTransform.forward * actualMovespeed * Time.deltaTime;
             }
         }
     }

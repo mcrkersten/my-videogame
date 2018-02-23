@@ -7,13 +7,14 @@ public class Enemy_Easy_Stealth : MonoBehaviour
     public Transform target;
     private Transform selfLocation;
     public GameObject bloodFab;
-    public int moveSpeed;
-    public int rotationSpeed;
+    public float moveSpeed;
+    public float rotationSpeed;
     private Transform myTransform;
     private Animator animator;
     public string Level_Name;
     private EnemyResponse MoveInVision;
     private Transform tempTransform;
+    public Animator Detection;
 
     void Awake()
     {
@@ -22,42 +23,52 @@ public class Enemy_Easy_Stealth : MonoBehaviour
     }
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         selfLocation = GetComponent<Transform>();
         animator = GetComponent<Animator>();
         GameObject go = GameObject.FindGameObjectWithTag("Player");
-        target = go.transform;
         MoveInVision = GetComponent<EnemyResponse>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Normal"))
+        GameObject go = GameObject.FindGameObjectWithTag("Player");
+        if (go == null)
         {
-            Debug.DrawLine(target.position, myTransform.position, Color.red);
-
-            if (MoveInVision.moveAss == true)
+            //NOTHING
+        }
+        else
+        {
+            target = go.transform;
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("Normal"))
             {
-                //Move towards target
-                myTransform.position += myTransform.forward * moveSpeed * Time.deltaTime;
-                myTransform.rotation = Quaternion.Slerp(myTransform.rotation, Quaternion.LookRotation(target.position - myTransform.position), rotationSpeed * Time.deltaTime);
+                Debug.DrawLine(target.position, myTransform.position, Color.red);
 
-                tempTransform.position = myTransform.position;
-                tempTransform.rotation = myTransform.rotation;
-            }
+                if (MoveInVision.moveAss == true)
+                {
+                    //Move towards target
+                    Detection.SetBool("Detected", true);
+                    myTransform.position += myTransform.forward * moveSpeed * Time.deltaTime;
+                    myTransform.rotation = Quaternion.Slerp(myTransform.rotation, Quaternion.LookRotation(target.position - myTransform.position), rotationSpeed * Time.deltaTime);
 
-            if(MoveInVision.suspicius == true)
-            {
-                myTransform.position = tempTransform.position;
-                myTransform.rotation = tempTransform.rotation;
+                    tempTransform.position = myTransform.position;
+                    tempTransform.rotation = myTransform.rotation;
+                }
+
+                if (MoveInVision.suspicius == true)
+                {
+                    myTransform.position = tempTransform.position;
+                    myTransform.rotation = tempTransform.rotation;
+                }
             }
         }
     }
 
     private void OnCollisionEnter(Collision coll)
     {
-        if(coll.gameObject.tag == "Bullet")
+        if (coll.gameObject.tag == "Bullet")
         {
             var blood = (GameObject)Instantiate(
                 bloodFab,

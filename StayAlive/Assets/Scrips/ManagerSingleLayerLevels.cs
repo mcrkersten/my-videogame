@@ -9,7 +9,7 @@ public class ManagerSingleLayerLevels : MonoBehaviour {
     private bool once = true;
 
     public GameObject mainCamshaker;
-    public GameObject GateSmokeParticlePrefab;
+    public GameObject GateSmokeParticle;
 
     [SerializeField, Tooltip("Update automatisch")]
     public int TotalSpawnPoints;
@@ -56,9 +56,7 @@ public class ManagerSingleLayerLevels : MonoBehaviour {
 
     void GateSmoke()
     {
-        var smoke = (GameObject)Instantiate(
-            GateSmokeParticlePrefab
-            );
+        GateSmokeParticle.SetActive(true);
     }
 
     void animateCages()
