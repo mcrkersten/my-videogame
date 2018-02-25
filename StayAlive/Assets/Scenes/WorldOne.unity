@@ -1686,6 +1686,10 @@ Prefab:
       propertyPath: moveTimer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1594652036642954, guid: 15a0ddd52dfe04d4fb74b4817dc9f76b, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 15a0ddd52dfe04d4fb74b4817dc9f76b, type: 2}
   m_IsPrefabParent: 0

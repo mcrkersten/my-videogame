@@ -5,6 +5,8 @@ using UnityEngine;
 public class ManagerSingleLayerLevels : MonoBehaviour {
 
     private float TimeWaited;
+
+    [SerializeField]
     private int TotalEnemies;
     private bool once = true;
 

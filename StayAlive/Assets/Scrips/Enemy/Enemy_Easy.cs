@@ -61,9 +61,6 @@ public class Enemy_Easy : MonoBehaviour
         else
         {
             target = go.transform;
-
-
-
             moveTimerCount = moveTimerCount - Time.deltaTime;
             if (moveTimerCount < 0)
             {

@@ -15,6 +15,7 @@ public class Enemy_Easy_Stealth : MonoBehaviour
     private EnemyResponse MoveInVision;
     private Transform tempTransform;
     public Animator Detection;
+    public SpawnManager spawnmanager;
 
     void Awake()
     {
@@ -55,12 +56,15 @@ public class Enemy_Easy_Stealth : MonoBehaviour
 
                     tempTransform.position = myTransform.position;
                     tempTransform.rotation = myTransform.rotation;
-                }
+                    if(spawnmanager == null)
+                    {
+                        //NITHING
+                    }
+                    else
+                    {
+                        spawnmanager.spawnEnemies = true;
+                    }
 
-                if (MoveInVision.suspicius == true)
-                {
-                    myTransform.position = tempTransform.position;
-                    myTransform.rotation = tempTransform.rotation;
                 }
             }
         }
