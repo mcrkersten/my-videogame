@@ -20,6 +20,10 @@ ModelImporter:
     100024: polySurface26
     100026: pPlane4
     100028: group12
+    100030: polySurface34
+    100032: group16
+    100034: group17
+    100036: polySurface35
     400000: //RootNode
     400002: pCube100
     400004: pCube101
@@ -35,6 +39,10 @@ ModelImporter:
     400024: polySurface26
     400026: pPlane4
     400028: group12
+    400030: polySurface34
+    400032: group16
+    400034: group17
+    400036: polySurface35
     2100000: lambert1
     2300000: pCube100
     2300002: pCube101
@@ -49,6 +57,8 @@ ModelImporter:
     2300020: pCube79
     2300022: polySurface26
     2300024: pPlane4
+    2300026: polySurface34
+    2300028: polySurface35
     3300000: pCube100
     3300002: pCube101
     3300004: pCube102
@@ -62,6 +72,8 @@ ModelImporter:
     3300020: pCube79
     3300022: polySurface26
     3300024: pPlane4
+    3300026: polySurface34
+    3300028: polySurface35
     4300000: pPlane4
     4300002: polySurface26
     4300004: pCube72
@@ -75,6 +87,8 @@ ModelImporter:
     4300020: pCube100
     4300022: pCube101
     4300024: pCube102
+    4300026: polySurface34
+    4300028: polySurface35
     9500000: //RootNode
   externalObjects: {}
   materials:
