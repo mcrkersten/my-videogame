@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 8
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -38,13 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
-  m_UseRadianceAmbientProbe: 0
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -55,10 +54,11 @@ LightmapSettings:
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
-    serializedVersion: 10
+    serializedVersion: 9
     m_Resolution: 2
     m_BakeResolution: 40
-    m_AtlasSize: 1024
+    m_TextureWidth: 1024
+    m_TextureHeight: 1024
     m_AO: 0
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
@@ -89,7 +89,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000002, guid: a6ac3589569f6d94db9b014d89ad4560,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -705,7 +706,7 @@ Prefab:
     - target: {fileID: 2300000, guid: afbacf26c59e1fb4a815ae30e3d39a38, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a6c43452bcd37194eac4b58e4a90283c, type: 2}
+      objectReference: {fileID: 2100000, guid: 79cd5704ffd7d2e47b5d5e645df8e007, type: 2}
     - target: {fileID: 100006, guid: afbacf26c59e1fb4a815ae30e3d39a38, type: 3}
       propertyPath: m_TagString
       value: Wall
@@ -1185,61 +1186,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 59559694228045608, guid: d772ed76f04dd5247b358fb8d653029b,
-        type: 2}
-      propertyPath: m_ConnectedAnchor.z
-      value: 0.031620387
-      objectReference: {fileID: 0}
-    - target: {fileID: 59491141047627280, guid: d772ed76f04dd5247b358fb8d653029b,
-        type: 2}
-      propertyPath: m_ConnectedAnchor.y
-      value: -0.1360022
-      objectReference: {fileID: 0}
-    - target: {fileID: 59094238274510464, guid: d772ed76f04dd5247b358fb8d653029b,
-        type: 2}
-      propertyPath: m_ConnectedAnchor.y
-      value: -0.12599884
-      objectReference: {fileID: 0}
-    - target: {fileID: 59474860602684754, guid: d772ed76f04dd5247b358fb8d653029b,
-        type: 2}
-      propertyPath: m_ConnectedAnchor.y
-      value: -0.1300006
-      objectReference: {fileID: 0}
-    - target: {fileID: 59339583780722502, guid: d772ed76f04dd5247b358fb8d653029b,
-        type: 2}
-      propertyPath: m_ConnectedAnchor.y
-      value: -0.13200073
-      objectReference: {fileID: 0}
-    - target: {fileID: 59685417361632878, guid: d772ed76f04dd5247b358fb8d653029b,
-        type: 2}
-      propertyPath: m_ConnectedAnchor.y
-      value: -0.1280017
-      objectReference: {fileID: 0}
-    - target: {fileID: 59839002971865802, guid: d772ed76f04dd5247b358fb8d653029b,
-        type: 2}
-      propertyPath: m_ConnectedAnchor.y
-      value: -0.12800293
-      objectReference: {fileID: 0}
-    - target: {fileID: 59148092776866416, guid: d772ed76f04dd5247b358fb8d653029b,
-        type: 2}
-      propertyPath: m_ConnectedAnchor.y
-      value: -0.13199799
-      objectReference: {fileID: 0}
-    - target: {fileID: 59832417175638508, guid: d772ed76f04dd5247b358fb8d653029b,
-        type: 2}
-      propertyPath: m_ConnectedAnchor.y
-      value: -0.13199767
-      objectReference: {fileID: 0}
-    - target: {fileID: 59307168160246036, guid: d772ed76f04dd5247b358fb8d653029b,
-        type: 2}
-      propertyPath: m_ConnectedAnchor.y
-      value: -0.16999969
-      objectReference: {fileID: 0}
-    - target: {fileID: 59333610589659960, guid: d772ed76f04dd5247b358fb8d653029b,
-        type: 2}
-      propertyPath: m_ConnectedAnchor.y
-      value: -0.107999265
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d772ed76f04dd5247b358fb8d653029b, type: 2}
   m_IsPrefabParent: 0
@@ -1296,7 +1242,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1578551969
 Prefab:
   m_ObjectHideFlags: 0

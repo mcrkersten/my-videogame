@@ -21,7 +21,7 @@ public class ManagerSingleLayerLevels : MonoBehaviour {
     public Animator portal;
     [SerializeField, Tooltip("Animator for cages")]
     public Animator[] cages;
-    [SerializeField, RangeAttribute(1, 10), Tooltip("Timer voor spawnen van enemies na level transitie")]
+    [SerializeField, RangeAttribute(1, 10), Tooltip("Timer voor spawnen van portal")]
     public float TimeWait;
 
     // Use this for initialization
