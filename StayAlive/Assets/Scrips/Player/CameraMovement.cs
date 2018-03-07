@@ -20,7 +20,7 @@ public class CameraMovement : MonoBehaviour {
         }
         else
         {
-            transform.position = new Vector3(follow.position.x + 20, follow.position.y + 30, follow.position.z - 20);
+            transform.position = Vector3.Lerp(transform.position, new Vector3 (follow.position.x +20, follow.position.y + 30, follow.position.z - 20), 0.1f);
         }       
     }
 }
