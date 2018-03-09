@@ -10,14 +10,19 @@ public class GunController : MonoBehaviour {
     public int bulletSpeed;
     public float bulletTime;
     private float fireTimer;
-    private bool gun1 = false;
-    private bool gun2 = true;
+    private bool gun1 = false; //left
+    private bool gun2 = true; // right
     public float fireRate;
+
+    public LineRenderer LeftLaser;
+    public LineRenderer RightLaser;
 
 
     // Update is called once per frame
     void Start()
     {
+        LeftLaser.enabled = false;
+        RightLaser.enabled = true;
         fireTimer = 0;
     }
 
@@ -32,12 +37,16 @@ public class GunController : MonoBehaviour {
                 {
                     Fire1();
                     gun1 = false;
+                    LeftLaser.enabled = false;
+                    RightLaser.enabled = true;
                     gun2 = true;
                 }
                 else if (gun2 == true && gun1 == false)
                 {
                     Fire2();
                     gun2 = false;
+                    LeftLaser.enabled = true;
+                    RightLaser.enabled = false;
                     gun1 = true;
                 }
                 fireTimer = 0;
