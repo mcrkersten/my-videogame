@@ -83,7 +83,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4855438342872640}
   - component: {fileID: 33805401332317770}
-  - component: {fileID: 65901607020003308}
   - component: {fileID: 23022794433089466}
   m_Layer: 0
   m_Name: WeaponLeft
@@ -101,7 +100,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4609665234801990}
   - component: {fileID: 33670892015441716}
-  - component: {fileID: 65777600360875298}
   - component: {fileID: 23832478493567644}
   m_Layer: 0
   m_Name: WeaponRight
@@ -119,7 +117,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4859962250371448}
   - component: {fileID: 33188734309997850}
-  - component: {fileID: 65375841583774570}
   - component: {fileID: 23219761469010726}
   - component: {fileID: 114624281219547468}
   m_Layer: 0
@@ -285,7 +282,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1702624989677016}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6072383, y: 0.38, z: 3.4491134}
+  m_LocalPosition: {x: 0.47836685, y: 0.391, z: 3.7225564}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4859962250371448}
@@ -471,30 +468,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
---- !u!65 &65375841583774570
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1660385329369610}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65777600360875298
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1649189039233334}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65901132567988296
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -503,18 +476,6 @@ BoxCollider:
   m_GameObject: {fileID: 1450755764704354}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65901607020003308
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1489314893448850}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}

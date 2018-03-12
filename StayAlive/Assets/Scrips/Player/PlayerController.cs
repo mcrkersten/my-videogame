@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private float timer2;
     public PlayerStats PS;
     private Animator Anim;
+    private Collider LatestHit;
 
     // Use this for initialization
     void Start()
@@ -29,6 +30,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print(targetable);
         timers();
         Physics.IgnoreCollision(ignore,portal);
     }
@@ -63,6 +65,7 @@ public class PlayerController : MonoBehaviour
                 targetable = true;
                 Anim.SetBool("Hit", false);
                 timer2 = 0;
+                Physics.IgnoreLayerCollision(9, 10, false);
             }
         }
     }
@@ -93,7 +96,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (c.gameObject.tag == "Enemy" && targetable == false)
         {
-            Physics.IgnoreCollision(c.collider, this.GetComponent<Collider>());
+            Physics.IgnoreLayerCollision(9, 10, true);
         }
     }
 
