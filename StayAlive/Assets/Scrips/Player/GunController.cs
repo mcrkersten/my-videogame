@@ -26,7 +26,7 @@ public class GunController : MonoBehaviour {
         fireTimer = 0;
     }
 
-    void Update () {
+    void FixedUpdate () {
         RotateController();
         fireTimer = fireTimer + Time.deltaTime;
         if (Input.GetAxis("joystick button 10") > 0 || Input.GetKey("space"))
@@ -55,17 +55,16 @@ public class GunController : MonoBehaviour {
     }
 
     void RotateController() {
-        float x = Input.GetAxis("R_horizontal");
-        float y = Input.GetAxis("R_vertical");
+        float x = Input.GetAxis("R_Horizontal");
+        float y = Input.GetAxis("R_Vertical");
 
         //guns.transform.eulerAngles = new Vector3(transform.eulerAngles.x, Mathf.Atan2(x, -y) * Mathf.Rad2Deg - 45, guns.transform.eulerAngles.z);
 
-        if (x != 0f || y != 0f)
+        if (x != 0.0f || y != 0.0f)
         {
-           float angle = Mathf.Atan2(y, x) * Mathf.Rad2Deg;
-           guns.transform.eulerAngles = new Vector3 (0,angle + 45,0);
+            float angle = Mathf.Atan2(y, x) * Mathf.Rad2Deg;
+            guns.transform.eulerAngles = new Vector3 (0,angle + 45,0);
         }
-
     }
 
     void Fire1()

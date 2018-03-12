@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 54583717938569856}
   - component: {fileID: 114454774287399856}
   - component: {fileID: 95590849431723716}
+  - component: {fileID: 114520692449173140}
   m_Layer: 0
   m_Name: Enemy_Tuturial
   m_TagString: Enemy
@@ -211,7 +212,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 025e8860f240c754c877e1052142f1c1, type: 2}
   m_StaticBatchInfo:
@@ -272,7 +272,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!95 &95590849431723716
 Animator:
   serializedVersion: 3
@@ -290,7 +289,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!95 &95698979310932404
 Animator:
   serializedVersion: 3
@@ -308,7 +306,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114454774287399856
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -329,6 +326,19 @@ MonoBehaviour:
   acceleration: 0.05
   rotationSpeed: 4
   maxdistance: 1
+--- !u!114 &114520692449173140
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1117370350708856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d902ba3a3c00444293e85fe423ecf32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DamageToPlayer: 10
+  force: 900
 --- !u!114 &114890544769664182
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -379,7 +389,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -424,7 +433,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -469,7 +477,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -514,7 +521,6 @@ SpriteMask:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10758, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:

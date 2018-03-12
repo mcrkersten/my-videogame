@@ -63,6 +63,7 @@ GameObject:
   - component: {fileID: 95237358015587462}
   - component: {fileID: 114992114360341140}
   - component: {fileID: 114904668802636062}
+  - component: {fileID: 114215730194952052}
   m_Layer: 0
   m_Name: Enemy_Easy_stealth
   m_TagString: Enemy
@@ -242,6 +243,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114215730194952052
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1923105304748570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d902ba3a3c00444293e85fe423ecf32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DamageToPlayer: 25
+  force: 900
 --- !u!114 &114221743793053470
 MonoBehaviour:
   m_ObjectHideFlags: 1

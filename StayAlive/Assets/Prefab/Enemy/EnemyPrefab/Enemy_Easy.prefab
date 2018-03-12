@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 114501141232992964}
   - component: {fileID: 95200770937778612}
   - component: {fileID: 114489303210625722}
+  - component: {fileID: 114728739017185562}
   m_Layer: 0
   m_Name: Enemy_Easy
   m_TagString: Enemy
@@ -213,6 +214,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bac5435b07bb379439424f7fa74a0042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114728739017185562
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1969806168014510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d902ba3a3c00444293e85fe423ecf32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DamageToPlayer: 10
+  force: 900
 --- !u!135 &135502355300668412
 SphereCollider:
   m_ObjectHideFlags: 1

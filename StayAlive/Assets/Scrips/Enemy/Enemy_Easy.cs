@@ -32,8 +32,8 @@ public class Enemy_Easy : MonoBehaviour
     public int rotationSpeed;
     [SerializeField, Tooltip("Max distance of response to player")]
     public int maxdistance;
-    
-    
+
+
 
     void Awake()
     {

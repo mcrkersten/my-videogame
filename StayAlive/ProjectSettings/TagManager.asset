@@ -10,6 +10,7 @@ TagManager:
   - EnemySpawn
   - EnemyBullet
   - NextLevel
+  - PlayerStats
   layers:
   - Default
   - TransparentFX
