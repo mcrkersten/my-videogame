@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212236773814151550}
   - component: {fileID: 114221743793053470}
   - component: {fileID: 95870700992717174}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: UItroepteken
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 33094881027868918}
   - component: {fileID: 114895214506133836}
   - component: {fileID: 114344277114522760}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LineOfSight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,7 +64,7 @@ GameObject:
   - component: {fileID: 114992114360341140}
   - component: {fileID: 114904668802636062}
   - component: {fileID: 114215730194952052}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy_Easy_stealth
   m_TagString: Enemy
   m_Icon: {fileID: 0}

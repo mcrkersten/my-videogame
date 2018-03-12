@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4542315845104560}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EnemyBulletSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4008068642481330}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Facing
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   - component: {fileID: 33824694720147840}
   - component: {fileID: 136787706809088408}
   - component: {fileID: 23768328522880538}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 95200770937778612}
   - component: {fileID: 114281648604313086}
   - component: {fileID: 114009936407994108}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy_Easy_Fire
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -261,12 +261,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86a82b0696609f542bbd776f8ad9ab48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  canMove: 0
+  moveTimer: 0
   bloodFab: {fileID: 1063434528316164, guid: a8c772e94dfc7254a8f613901f39eaa3, type: 2}
+  Level_Name: Level_Layer1
+  Detection: {fileID: 0}
   moveSpeed: 1
+  acceleration: 0
   rotationSpeed: 10
   maxdistance: 0
-  Level_Name: Level_Layer1
 --- !u!114 &114281648604313086
 MonoBehaviour:
   m_ObjectHideFlags: 1

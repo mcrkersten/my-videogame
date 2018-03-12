@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212878114224638858}
   - component: {fileID: 114568648292063658}
   - component: {fileID: 95198203065342996}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: UItroepteken
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 95200770937778612}
   - component: {fileID: 114489303210625722}
   - component: {fileID: 114728739017185562}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy_Easy
   m_TagString: Enemy
   m_Icon: {fileID: 0}

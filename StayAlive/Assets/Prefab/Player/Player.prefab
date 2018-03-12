@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4807058093500050}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BulletSpawnRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4740444509211070}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BulletSpawnLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ GameObject:
   - component: {fileID: 4063108383159544}
   - component: {fileID: 114105546736742212}
   - component: {fileID: 120576670222681310}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: R_Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 4855438342872640}
   - component: {fileID: 33805401332317770}
   - component: {fileID: 23022794433089466}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WeaponLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 4609665234801990}
   - component: {fileID: 33670892015441716}
   - component: {fileID: 23832478493567644}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WeaponRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 33188734309997850}
   - component: {fileID: 23219761469010726}
   - component: {fileID: 114624281219547468}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Guns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 54718065698477784}
   - component: {fileID: 114120483730504068}
   - component: {fileID: 95263589497846674}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 4413433133446108}
   - component: {fileID: 114687764056063076}
   - component: {fileID: 120043688598111064}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: L_Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,7 +282,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1702624989677016}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.47836685, y: 0.391, z: 3.7225564}
+  m_LocalPosition: {x: 1.2354938, y: 0.38030538, z: 4.276238}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4859962250371448}
