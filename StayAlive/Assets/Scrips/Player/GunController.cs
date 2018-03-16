@@ -13,6 +13,7 @@ public class GunController : MonoBehaviour {
     private bool gun1 = false; //left
     private bool gun2 = true; // right
     public float fireRate;
+    public PlayerStats PS;
 
     public LineRenderer LeftLaser;
     public LineRenderer RightLaser;
@@ -21,6 +22,7 @@ public class GunController : MonoBehaviour {
     // Update is called once per frame
     void Start()
     {
+        PS = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<PlayerStats>();
         LeftLaser.enabled = false;
         RightLaser.enabled = true;
         fireTimer = 0;
@@ -33,17 +35,21 @@ public class GunController : MonoBehaviour {
         {
             if (fireTimer > fireRate)
             {
-                if (gun1 == true && gun2 == false)
+                if (gun1 == true && gun2 == false && PS.mana > 0)
                 {
                     Fire1();
+                    PS.mana = PS.mana - 1;
+                    PS.timer = PS.ManaRegenPerSecond;
                     gun1 = false;
                     LeftLaser.enabled = false;
                     RightLaser.enabled = true;
                     gun2 = true;
                 }
-                else if (gun2 == true && gun1 == false)
+                else if (gun2 == true && gun1 == false && PS.mana > 0)
                 {
                     Fire2();
+                    PS.mana = PS.mana - 1;
+                    PS.timer = PS.ManaRegenPerSecond;
                     gun2 = false;
                     LeftLaser.enabled = true;
                     RightLaser.enabled = false;

@@ -254,7 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d902ba3a3c00444293e85fe423ecf32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageToPlayer: 25
+  DamageToPlayer: 1
   force: 900
 --- !u!114 &114221743793053470
 MonoBehaviour:
@@ -330,9 +330,10 @@ MonoBehaviour:
   bloodFab: {fileID: 1063434528316164, guid: a8c772e94dfc7254a8f613901f39eaa3, type: 2}
   moveSpeed: 1
   rotationSpeed: 1
-  Level_Name: 
+  MoveInVision: {fileID: 0}
   Detection: {fileID: 95870700992717174}
   spawnmanager: {fileID: 0}
+  go: {fileID: 0}
 --- !u!135 &135200618843596812
 SphereCollider:
   m_ObjectHideFlags: 1

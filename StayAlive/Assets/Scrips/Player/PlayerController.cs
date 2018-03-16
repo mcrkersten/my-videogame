@@ -76,16 +76,13 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-        else if (other.tag == "Enemy")
-        {
-            PS.health = PS.health - other.GetComponent<DamageAmount>().DamageToPlayer;        
-        }
     }
 
     void OnCollisionEnter(Collision c)
     {
-        if (c.gameObject.tag == "Enemy" && targetable == true)
+        if (c.gameObject.tag == "Enemy" || c.gameObject.tag == "EnemyBullet" && targetable == true )
         {
+            PS.health = PS.health - c.gameObject.GetComponent<DamageAmount>().DamageToPlayer;
             canMove = false;
             targetable = false;
             Anim.SetBool("Hit", true);

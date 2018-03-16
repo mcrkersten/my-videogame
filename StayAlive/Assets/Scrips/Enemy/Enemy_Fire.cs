@@ -35,3 +35,5 @@ public class Enemy_Fire : MonoBehaviour
         bulletEnemy.GetComponent<Rigidbody>().velocity = bulletEnemy.transform.forward * bulletSpeed;
     }
 }
+
+

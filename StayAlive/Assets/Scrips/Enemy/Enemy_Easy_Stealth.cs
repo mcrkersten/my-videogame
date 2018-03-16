@@ -11,11 +11,11 @@ public class Enemy_Easy_Stealth : MonoBehaviour
     public float rotationSpeed;
     private Transform myTransform;
     private Animator animator;
-    public string Level_Name;
-    private EnemyResponse MoveInVision;
+    public EnemyResponse MoveInVision;
     private Transform tempTransform;
     public Animator Detection;
     public SpawnManager spawnmanager;
+    public GameObject go;
 
     void Awake()
     {
@@ -28,14 +28,13 @@ public class Enemy_Easy_Stealth : MonoBehaviour
     {
         selfLocation = GetComponent<Transform>();
         animator = GetComponent<Animator>();
-        GameObject go = GameObject.FindGameObjectWithTag("Player");
         MoveInVision = GetComponent<EnemyResponse>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        GameObject go = GameObject.FindGameObjectWithTag("Player");
+        go = GameObject.FindGameObjectWithTag("Player");
         if (go == null)
         {
             //NOTHING
@@ -49,16 +48,10 @@ public class Enemy_Easy_Stealth : MonoBehaviour
 
                 if (MoveInVision.moveAss == true)
                 {
-                    //Move towards target
-                    Detection.SetBool("Detected", true);
-                    myTransform.position += myTransform.forward * moveSpeed * Time.deltaTime;
-                    myTransform.rotation = Quaternion.Slerp(myTransform.rotation, Quaternion.LookRotation(target.position - myTransform.position), rotationSpeed * Time.deltaTime);
-
-                    tempTransform.position = myTransform.position;
-                    tempTransform.rotation = myTransform.rotation;
+                    moveToTarget();
                     if(spawnmanager == null)
                     {
-                        //NITHING
+                        //NOTHING
                     }
                     else
                     {
@@ -68,6 +61,16 @@ public class Enemy_Easy_Stealth : MonoBehaviour
                 }
             }
         }
+    }
+    private void moveToTarget()
+    {
+        //Move towards target
+        Detection.SetBool("Detected", true);
+        myTransform.position += myTransform.forward * moveSpeed * Time.deltaTime;
+        myTransform.rotation = Quaternion.Slerp(myTransform.rotation, Quaternion.LookRotation(target.position - myTransform.position), rotationSpeed * Time.deltaTime);
+
+        tempTransform.position = myTransform.position;
+        tempTransform.rotation = myTransform.rotation;
     }
 
     private void OnCollisionEnter(Collision coll)

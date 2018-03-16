@@ -11,9 +11,9 @@ public class Bullet : MonoBehaviour {
     {
         BulletPosition = gameObject.transform;
 
-        if (coll.gameObject.tag == "Enemy" || coll.gameObject.tag == "Wall" || coll.gameObject.tag == "EnemyBullet" || coll.gameObject.tag == "Bullet")
+        if (coll.gameObject.tag == "Player" || coll.gameObject.tag == "Enemy" || coll.gameObject.tag == "Wall" || coll.gameObject.tag == "EnemyBullet" || coll.gameObject.tag == "Bullet")
         {
-            if (coll.gameObject.tag == "Wall" || coll.gameObject.tag == "EnemyBullet" || coll.gameObject.tag == "Enemy")
+            if (coll.gameObject.tag == "Player" || coll.gameObject.tag == "Wall" || coll.gameObject.tag == "EnemyBullet" || coll.gameObject.tag == "Enemy")
             {
                 smoke();
                 transform.DetachChildren();

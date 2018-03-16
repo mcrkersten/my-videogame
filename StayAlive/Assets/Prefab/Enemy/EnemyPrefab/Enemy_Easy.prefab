@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d902ba3a3c00444293e85fe423ecf32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageToPlayer: 10
+  DamageToPlayer: 1
   force: 900
 --- !u!135 &135502355300668412
 SphereCollider:
