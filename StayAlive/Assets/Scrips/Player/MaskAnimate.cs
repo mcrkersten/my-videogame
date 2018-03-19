@@ -5,11 +5,11 @@ using UnityEngine;
 public class MaskAnimate : MonoBehaviour {
 
     private Animator animator;
-    private Enemy_Easy script;
+    private Enemy_Base script;
 	// Use this for initialization
 	void Start () {
         animator = GetComponent<Animator>();
-        script = GetComponentInParent<Enemy_Easy>();
+        script = GetComponentInParent<Enemy_Base>();
 	}
 	
 	// Update is called once per frame
