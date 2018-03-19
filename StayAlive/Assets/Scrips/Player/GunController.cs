@@ -3,18 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GunController : MonoBehaviour {
-    public GameObject guns;
-    public GameObject bulletPrefab;
-    public Transform bulletSpawn1;
-    public Transform bulletSpawn2;
-    public int bulletSpeed;
-    public float bulletTime;
     private float fireTimer;
     private bool gun1 = false; //left
     private bool gun2 = true; // right
-    public float fireRate;
-    public PlayerStats PS;
+    private PlayerStats PS;
 
+    [Header("Bullet prefab")]
+    public GameObject bulletPrefab;
+
+    [Header("Guns")]
+    public Transform bulletSpawn1;
+    public Transform bulletSpawn2;
+
+    [Header("Fire settings")]
+    public int bulletSpeed;
+    public float bulletTime;
+    public float fireRate;
+
+    [Header("Target lines")]
     public LineRenderer LeftLaser;
     public LineRenderer RightLaser;
 
@@ -69,7 +75,7 @@ public class GunController : MonoBehaviour {
         if (x != 0.0f || y != 0.0f)
         {
             float angle = Mathf.Atan2(y, x) * Mathf.Rad2Deg;
-            guns.transform.eulerAngles = new Vector3 (0,angle + 45,0);
+            gameObject.transform.eulerAngles = new Vector3 (0,angle + 45,0);
         }
     }
 

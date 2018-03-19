@@ -5,18 +5,21 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
-    public float Movespeed = .1f;
-    public Collider ignore;
-    public Collider portal;
+    private PlayerStats PS;
     private bool canMove = true;
     private bool targetable = true;
+    private Animator Anim;
     private float timer1;
     private float timer2;
-    public PlayerStats PS;
-    private Animator Anim;
-    private Collider LatestHit;
 
+    [Header("Start settings")]
+    public float Movespeed = .1f;
+
+    [Header("Collisions to ignore")]
+    public Collider ignore;
+    public Collider portal;
+
+    
     // Use this for initialization
     void Start()
     {
@@ -30,15 +33,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(targetable);
         timers();
         Physics.IgnoreCollision(ignore,portal);
-    }
-
-    void Movement()
-    {
-        transform.Translate(new Vector3(-1,0,1) * Input.GetAxis("Vertical") * Movespeed);
-        transform.Translate(new Vector3(1, 0, 1) * Input.GetAxis("Horizontal") * Movespeed);
     }
 
     void timers()
@@ -65,14 +61,21 @@ public class PlayerController : MonoBehaviour
                 targetable = true;
                 Anim.SetBool("Hit", false);
                 timer2 = 0;
+                //RESET ENEMY COLLISION
                 Physics.IgnoreLayerCollision(9, 10, false);
             }
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    void Movement()
     {
-        if (other.tag == "NextLevel")
+        transform.Translate(new Vector3(-Movespeed, 0, Movespeed) * Input.GetAxis("Vertical"));
+        transform.Translate(new Vector3(Movespeed, 0, Movespeed) * Input.GetAxis("Horizontal"));
+    }
+
+    void OnTriggerEnter(Collider portal)
+    {
+        if (portal.tag == "NextLevel")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
@@ -93,6 +96,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (c.gameObject.tag == "Enemy" && targetable == false)
         {
+            //IGNORE ENEMY COLLISION
             Physics.IgnoreLayerCollision(9, 10, true);
         }
     }
