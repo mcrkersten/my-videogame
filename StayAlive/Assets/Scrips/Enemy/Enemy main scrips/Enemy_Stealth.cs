@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy_Stealth : MonoBehaviour
 {
     private Transform myTransform;
-    private Animator animator;
+    //private Animator animator;
     private Transform selfLocation;
 
     [Header("Movement settings")]
@@ -36,7 +36,6 @@ public class Enemy_Stealth : MonoBehaviour
     void Start()
     {
         selfLocation = GetComponent<Transform>();
-        animator = GetComponent<Animator>();
         MoveInVision = GetComponent<EnemyResponse>();
     }
 
@@ -48,7 +47,7 @@ public class Enemy_Stealth : MonoBehaviour
         {
             //THIS IS NOT THE PLAYER YOU ARE LOOKING FOR
         }
-        else if (MoveInVision.moveAss == true || animator.GetCurrentAnimatorStateInfo(0).IsName("Normal"))
+        else if (MoveInVision.moveAss == true)
         {
             Debug.DrawLine(go.transform.position, myTransform.position, Color.red);
             moveToTarget();
