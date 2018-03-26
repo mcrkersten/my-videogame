@@ -19,7 +19,8 @@ public class PlayerController : MonoBehaviour
     public Collider portal;
 
     [Header("Animation on hit")]
-    public Animator Anim;
+    public Animator hands;
+    public Animator body;
 
 
     // Use this for initialization
@@ -54,7 +55,8 @@ public class PlayerController : MonoBehaviour
             if (timer2 > 1.5)
             {
                 targetable = true;
-                Anim.SetBool("Hit", false);
+                hands.SetBool("Hit", false);
+                body.SetBool("Hit", false);
                 timer2 = 0;
                 //RESET ENEMY COLLISION
                 Physics.IgnoreLayerCollision(9, 10, false);
@@ -94,7 +96,8 @@ public class PlayerController : MonoBehaviour
             GetComponent<Rigidbody>().AddForce(dir * c.gameObject.GetComponent<DamageAmount>().force);
 
             print(c.gameObject.GetComponent<DamageAmount>().force);
-            Anim.SetBool("Hit", true);
+            hands.SetBool("Hit", true);
+            body.SetBool("Hit", true);
         }
     }
 }

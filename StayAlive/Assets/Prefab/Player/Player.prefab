@@ -52,6 +52,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4044876248957528}
+  - component: {fileID: 95978053934645350}
   m_Layer: 10
   m_Name: BodyHold
   m_TagString: Untagged
@@ -605,7 +606,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1653738318264880}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6074503, y: 0.06999999, z: 3.6587596}
+  m_LocalPosition: {x: 2.521905, y: 0.06999987, z: 4.537662}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4354544620304258}
@@ -1204,6 +1205,23 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &95978053934645350
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111610323303272}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9f8a61c194232c047b7357f28c75b547, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114108510218023456
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1230,7 +1248,8 @@ MonoBehaviour:
   Movespeed: 0.1
   ignore: {fileID: 65367559082167316}
   portal: {fileID: 0}
-  Anim: {fileID: 95106251911233908}
+  hands: {fileID: 95106251911233908}
+  body: {fileID: 95978053934645350}
 --- !u!114 &114273773221762940
 MonoBehaviour:
   m_ObjectHideFlags: 1
