@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy_Gun : MonoBehaviour
 {   
     private Transform myTransform;
+    [SerializeField]
     private Animator animator;
     private Transform selfLocation;
     private float fireTimer;
@@ -54,15 +55,16 @@ public class Enemy_Gun : MonoBehaviour
         {
             //THIS IS NOT THE PLAYER YOU ARE LOOKING FOR
         }         
-        else if (MoveInVision.moveAss == true && animator.GetCurrentAnimatorStateInfo(0).IsName("Normal"))
+        else if (MoveInVision.moveAss == true)
         {
+            animator.SetBool("HasGun", true);
             Debug.DrawLine(go.transform.position, myTransform.position, Color.red);
             moveToTarget();
             fireTimer = fireTimer - Time.deltaTime;
 
-            if (fireTimer < 0)
+            if (fireTimer < 0 && animator.GetCurrentAnimatorStateInfo(0).IsName("Ready"))
             {
-                Fire();
+                animator.SetTrigger("Fire");
                 fireTimer = fireRate;
             }
             if (spawnmanager == null)
@@ -92,6 +94,12 @@ public class Enemy_Gun : MonoBehaviour
 
         // Add velocity to the bullet
         bulletEnemy.GetComponent<Rigidbody>().velocity = bulletEnemy.transform.forward * bulletSpeed;
+    }
+
+
+    void AnimationFire()
+    {
+        Fire();
     }
 
 

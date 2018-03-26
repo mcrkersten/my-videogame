@@ -197,7 +197,6 @@ MonoBehaviour:
   canMove: 0
   moveTimer: 1.5
   bloodFab: {fileID: 1063434528316164, guid: a8c772e94dfc7254a8f613901f39eaa3, type: 2}
-  Level_Name: Level_Layer1
   Detection: {fileID: 95198203065342996}
   moveSpeed: 2
   acceleration: 0.05

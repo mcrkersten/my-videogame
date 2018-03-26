@@ -85,7 +85,7 @@ public class Enemy_Base : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision coll)
+    void OnCollisionEnter(Collision coll)
     {
         if(coll.gameObject.tag == "Bullet")
         {
@@ -95,6 +95,13 @@ public class Enemy_Base : MonoBehaviour
                 selfLocation.rotation);
             blood.transform.parent = null;//GameObject.Find(Level_Name).transform;
             Destroy(gameObject);
+        }
+
+        if(coll.gameObject.tag == "Player")
+        {
+            Vector3 dir = coll.contacts[0].point - transform.position;
+            dir = -dir.normalized;
+            GetComponent<Rigidbody>().AddForce(dir * GetComponent<DamageAmount>().force);
         }
     }
 }

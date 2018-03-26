@@ -48,7 +48,7 @@ public class Enemy_Stealth : MonoBehaviour
         {
             //THIS IS NOT THE PLAYER YOU ARE LOOKING FOR
         }
-        else if (MoveInVision.moveAss == true && animator.GetCurrentAnimatorStateInfo(0).IsName("Normal"))
+        else if (MoveInVision.moveAss == true || animator.GetCurrentAnimatorStateInfo(0).IsName("Normal"))
         {
             Debug.DrawLine(go.transform.position, myTransform.position, Color.red);
             moveToTarget();

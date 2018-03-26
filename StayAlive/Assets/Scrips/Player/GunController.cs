@@ -7,6 +7,7 @@ public class GunController : MonoBehaviour {
     private bool gun1 = false; //left
     private bool gun2 = true; // right
     private PlayerStats PS;
+    public float angle;
 
     [Header("Bullet prefab")]
     public GameObject bulletPrefab;
@@ -14,6 +15,7 @@ public class GunController : MonoBehaviour {
     [Header("Guns")]
     public Transform bulletSpawn1;
     public Transform bulletSpawn2;
+    public Animator shootAni;
 
     [Header("Fire settings")]
     public int bulletSpeed;
@@ -46,6 +48,7 @@ public class GunController : MonoBehaviour {
                     Fire1();
                     PS.mana = PS.mana - 1;
                     PS.timer = PS.ManaRegenPerSecond;
+                    shootAni.SetBool("RightShoot", true);
                     gun1 = false;
                     LeftLaser.enabled = false;
                     RightLaser.enabled = true;
@@ -56,6 +59,7 @@ public class GunController : MonoBehaviour {
                     Fire2();
                     PS.mana = PS.mana - 1;
                     PS.timer = PS.ManaRegenPerSecond;
+                    shootAni.SetBool("LeftShoot", true);                   
                     gun2 = false;
                     LeftLaser.enabled = true;
                     RightLaser.enabled = false;
@@ -74,7 +78,7 @@ public class GunController : MonoBehaviour {
 
         if (x != 0.0f || y != 0.0f)
         {
-            float angle = Mathf.Atan2(y, x) * Mathf.Rad2Deg;
+            angle = Mathf.Atan2(y, x) * Mathf.Rad2Deg;
             gameObject.transform.eulerAngles = new Vector3 (0,angle + 45,0);
         }
     }
@@ -106,6 +110,16 @@ public class GunController : MonoBehaviour {
 
         // Destroy the bullet after 2 seconds
         Destroy(bullet, bulletTime);
+    }
+
+    private void ShootLeftDone()
+    {
+        shootAni.SetBool("LeftShoot", false);
+    }
+
+    private void ShootRightDone()
+    {
+        shootAni.SetBool("RightShoot", false);
     }
 
 }
