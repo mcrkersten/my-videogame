@@ -7,6 +7,20 @@ public class Bullet : MonoBehaviour {
     public GameObject smokePrefab;
     public Transform BulletPosition;
 
+    public float timer;
+    private float timePassed;
+    private void Update()
+    {
+        timePassed = timePassed + Time.deltaTime;
+        if(timePassed > timer)
+        {
+            BulletPosition = gameObject.transform;
+            smoke();
+            transform.DetachChildren();
+            Destroy(gameObject);
+        }
+    }
+
     void OnCollisionEnter(Collision coll)
     {
         BulletPosition = gameObject.transform;
@@ -18,7 +32,6 @@ public class Bullet : MonoBehaviour {
                 smoke();
                 transform.DetachChildren();
             }
-
             Destroy(gameObject);
         }
     }
