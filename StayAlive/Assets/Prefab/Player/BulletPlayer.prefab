@@ -146,6 +146,7 @@ MonoBehaviour:
   smokePrefab: {fileID: 1272416188072722, guid: dab010d93b2b288439ff41a7ca80a866,
     type: 2}
   BulletPosition: {fileID: 0}
+  timer: 1
 --- !u!114 &114683257955859206
 MonoBehaviour:
   m_ObjectHideFlags: 1

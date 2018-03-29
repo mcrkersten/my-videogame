@@ -1245,7 +1245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac94bc78a49224478b7c20a9a90585f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Movespeed: 0.05
+  Movespeed: 0.1
   ignore: {fileID: 65367559082167316}
   portal: {fileID: 0}
   hands: {fileID: 95106251911233908}
