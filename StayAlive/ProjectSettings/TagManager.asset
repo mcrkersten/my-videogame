@@ -11,6 +11,7 @@ TagManager:
   - EnemyBullet
   - NextLevel
   - PlayerStats
+  - CameraTrigger
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - Enemy
   - Player
   - Bullet
-  - 
+  - Fog
   - 
   - 
   - 
