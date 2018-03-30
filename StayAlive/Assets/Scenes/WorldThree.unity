@@ -2351,6 +2351,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 18
       objectReference: {fileID: 0}
+    - target: {fileID: 81398738000005942, guid: b3d7f76922e299b458ba10b26b2ed316,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b3d7f76922e299b458ba10b26b2ed316, type: 2}
   m_IsPrefabParent: 0
@@ -3418,32 +3423,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4632985364772726, guid: 7627384d7df7e864a93f141c4414e954,
     type: 2}
   m_PrefabInternal: {fileID: 681744491}
---- !u!1 &947237809 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1239686340786818, guid: b3380c1b6763fc4449282464eb2d322c,
-    type: 2}
-  m_PrefabInternal: {fileID: 1945183547}
 --- !u!114 &947237810 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114642983115044860, guid: b3380c1b6763fc4449282464eb2d322c,
     type: 2}
   m_PrefabInternal: {fileID: 1945183547}
   m_Script: {fileID: 11500000, guid: 4c16476691e574742820fbd8234624e5, type: 3}
---- !u!114 &947237811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 947237809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c16476691e574742820fbd8234624e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  spawnEnemies: 0
 --- !u!1 &956629462
 GameObject:
   m_ObjectHideFlags: 0
@@ -6707,10 +6692,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 4501988453046080, guid: b3380c1b6763fc4449282464eb2d322c, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
     - target: {fileID: 114642983115044860, guid: b3380c1b6763fc4449282464eb2d322c,
         type: 2}
       propertyPath: SpawnPoints.Array.data[0]
@@ -6721,20 +6702,6 @@ Prefab:
       propertyPath: SpawnPoints.Array.data[1]
       value: 
       objectReference: {fileID: 2013455722}
-    - target: {fileID: 4845903990272788, guid: b3380c1b6763fc4449282464eb2d322c, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.64
-      objectReference: {fileID: 0}
-    - target: {fileID: 114960257564129382, guid: b3380c1b6763fc4449282464eb2d322c,
-        type: 2}
-      propertyPath: _maxDistance
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 114204751543448904, guid: b3380c1b6763fc4449282464eb2d322c,
-        type: 2}
-      propertyPath: moveSpeed
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b3380c1b6763fc4449282464eb2d322c, type: 2}
   m_IsPrefabParent: 0

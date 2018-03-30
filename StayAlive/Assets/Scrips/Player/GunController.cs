@@ -26,6 +26,10 @@ public class GunController : MonoBehaviour {
     public LineRenderer LeftLaser;
     public LineRenderer RightLaser;
 
+    [Header("Audio settings")]
+    public AudioSource gunSource;
+    public AudioClip gunAudio;
+
 
     // Update is called once per frame
     void Start()
@@ -46,6 +50,8 @@ public class GunController : MonoBehaviour {
                 if (gun1 == true && gun2 == false && PS.mana > 0)
                 {
                     Fire1();
+                    gunSource.pitch = (Random.Range(1.3f, .8f));
+                    gunSource.PlayOneShot(gunAudio);
                     PS.mana = PS.mana - 1;
                     PS.timer = PS.ManaRegenPerSecond;
                     shootAni.SetBool("RightShoot", true);
@@ -57,6 +63,8 @@ public class GunController : MonoBehaviour {
                 else if (gun2 == true && gun1 == false && PS.mana > 0)
                 {
                     Fire2();
+                    gunSource.pitch = (Random.Range(1.3f, .8f));
+                    gunSource.PlayOneShot(gunAudio);
                     PS.mana = PS.mana - 1;
                     PS.timer = PS.ManaRegenPerSecond;
                     shootAni.SetBool("LeftShoot", true);                   

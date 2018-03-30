@@ -25,7 +25,11 @@ public class Enemy_Stealth : MonoBehaviour
 
     [Header("Spawn friends")]
     public SpawnManager spawnmanager;
-    
+
+    [Header("Audio settings")]
+    public AudioSource wahSource;
+    public AudioClip wahAudio;
+    private bool hasPlayed = false;
 
     void Awake()
     {
@@ -49,6 +53,7 @@ public class Enemy_Stealth : MonoBehaviour
         }
         else if (MoveInVision.moveAss == true)
         {
+            PlayAudio();
             Debug.DrawLine(go.transform.position, myTransform.position, Color.red);
             moveToTarget();
             if(spawnmanager == null)
@@ -59,6 +64,15 @@ public class Enemy_Stealth : MonoBehaviour
             {
                 spawnmanager.spawnEnemies = true;
             }
+        }
+    }
+
+    void PlayAudio()
+    {
+        if (hasPlayed == false)
+        {
+            wahSource.PlayOneShot(wahAudio);
+            hasPlayed = true;
         }
     }
 
@@ -76,7 +90,7 @@ public class Enemy_Stealth : MonoBehaviour
         {
             var blood = (GameObject)Instantiate(
                 bloodFab,
-                selfLocation.position,
+                new Vector3(selfLocation.position.x, selfLocation.position.y + 1, selfLocation.position.z),
                 selfLocation.rotation);
             blood.transform.parent = null;
             Destroy(gameObject);

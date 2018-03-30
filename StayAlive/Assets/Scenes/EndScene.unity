@@ -3599,7 +3599,7 @@ AudioListener:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 100078256}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!124 &100078258
 Behaviour:
   m_ObjectHideFlags: 0
@@ -3815,7 +3815,7 @@ GameObject:
   - component: {fileID: 484885683}
   - component: {fileID: 484885682}
   m_Layer: 0
-  m_Name: New Sprite (1)
+  m_Name: WallGradient
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4311,6 +4311,18 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aaa62089b11b38343a9fe58b9bfa34fa, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1756767394 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1984561598902024, guid: aaa62089b11b38343a9fe58b9bfa34fa,
+    type: 2}
+  m_PrefabInternal: {fileID: 1756767393}
+--- !u!81 &1756767395
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1756767394}
+  m_Enabled: 1
 --- !u!1001 &2003039509
 Prefab:
   m_ObjectHideFlags: 0

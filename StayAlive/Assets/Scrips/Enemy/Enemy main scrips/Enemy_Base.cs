@@ -32,6 +32,11 @@ public class Enemy_Base : MonoBehaviour
     [SerializeField, Tooltip("Max distance of response to player")]
     public int maxdistance;
 
+    [Header("Audio settings")]
+    public AudioSource wahSource;
+    public AudioClip wahAudio;
+    private bool hasPlayed = false;
+
 
 
     void Awake()
@@ -79,10 +84,20 @@ public class Enemy_Base : MonoBehaviour
                         actualMovespeed = actualMovespeed + acceleration;
                     }
                     Detection.SetBool("Detected", true);
+                    PlayAudio();
                     myTransform.position += myTransform.forward * actualMovespeed * Time.deltaTime;
                 }
             }
         }
+    }
+
+    void PlayAudio()
+    {
+        if(hasPlayed == false)
+        {
+            wahSource.PlayOneShot(wahAudio);
+            hasPlayed = true;
+        }       
     }
 
     void OnCollisionEnter(Collision coll)
@@ -91,7 +106,7 @@ public class Enemy_Base : MonoBehaviour
         {
             var blood = (GameObject)Instantiate(
                 bloodFab,
-                selfLocation.position,
+                new Vector3(selfLocation.position.x, selfLocation.position.y +1, selfLocation.position.z),
                 selfLocation.rotation);
             blood.transform.parent = null;//GameObject.Find(Level_Name).transform;
             Destroy(gameObject);

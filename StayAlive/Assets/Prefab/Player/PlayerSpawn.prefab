@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 4637605047239276}
   - component: {fileID: 114162245827568524}
   - component: {fileID: 114848461914759868}
+  - component: {fileID: 81997052298303198}
   m_Layer: 0
   m_Name: PlayerSpawn
   m_TagString: Untagged
@@ -167,6 +168,13 @@ Transform:
   m_Father: {fileID: 4637605047239276}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &81997052298303198
+AudioListener:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1469353037972192}
+  m_Enabled: 1
 --- !u!95 &95479410714039538
 Animator:
   serializedVersion: 3
@@ -253,7 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b016479e7dbd9643bfc1f58dfe93dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerPrefab: {fileID: 1702624989677016, guid: cf3232148f22eb048aa68dbcb2480482,
+  PlayerPrefab: {fileID: 1653738318264880, guid: 2e6df56239dd1d445a8c8b8318db0697,
     type: 2}
   TimeBeforeSpawn: 2.3
 --- !u!114 &114883447983801604

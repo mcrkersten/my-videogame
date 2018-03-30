@@ -7,6 +7,12 @@ public class Bullet : MonoBehaviour {
     public GameObject smokePrefab;
     public Transform BulletPosition;
 
+    [Header("Audio settings")]
+    public AudioSource Source;
+    public AudioClip AudioHit;
+    public AudioClip AudioEndLife;
+    private bool hasPlayed = false;
+
     public float timer;
     private float timePassed;
     private void Update()
@@ -15,6 +21,7 @@ public class Bullet : MonoBehaviour {
         if(timePassed > timer)
         {
             BulletPosition = gameObject.transform;
+            playSound(0);
             smoke();
             transform.DetachChildren();
             Destroy(gameObject);
@@ -30,6 +37,7 @@ public class Bullet : MonoBehaviour {
             if (coll.gameObject.tag == "Player" || coll.gameObject.tag == "Wall" || coll.gameObject.tag == "EnemyBullet" || coll.gameObject.tag == "Enemy")
             {
                 smoke();
+                playSound(1);
                 transform.DetachChildren();
             }
             Destroy(gameObject);
@@ -42,5 +50,18 @@ public class Bullet : MonoBehaviour {
             smokePrefab,
             BulletPosition.position,
             BulletPosition.rotation);
+    }
+
+    public void playSound(int i)
+    {
+        Source.pitch = (Random.Range(1.3f, .8f));
+        if (i == 1)
+        {
+            Source.PlayOneShot(AudioHit);
+        } 
+        else if(i == 0)
+        {
+            Source.PlayOneShot(AudioEndLife);
+        }
     }
 }

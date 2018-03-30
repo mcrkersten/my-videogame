@@ -34,6 +34,11 @@ public class Enemy_Gun : MonoBehaviour
     [Header("Spawn friends")]
     public SpawnManager spawnmanager;
 
+    [Header("Audio settings")]
+    public AudioSource wahSource;
+    public AudioClip wahAudio;
+    private bool hasPlayed = false;
+
     void Awake()
     {
         myTransform = transform;
@@ -57,6 +62,7 @@ public class Enemy_Gun : MonoBehaviour
         }         
         else if (MoveInVision.moveAss == true)
         {
+            PlayAudio();
             animator.SetBool("HasGun", true);
             Debug.DrawLine(go.transform.position, myTransform.position, Color.red);
             moveToTarget();
@@ -102,6 +108,14 @@ public class Enemy_Gun : MonoBehaviour
         Fire();
     }
 
+    void PlayAudio()
+    {
+        if (hasPlayed == false)
+        {
+            wahSource.PlayOneShot(wahAudio);
+            hasPlayed = true;
+        }
+    }
 
 
     private void OnCollisionEnter(Collision coll)
@@ -110,7 +124,7 @@ public class Enemy_Gun : MonoBehaviour
         {
             var blood = (GameObject)Instantiate(
                 bloodFab,
-                selfLocation.position,
+                new Vector3(selfLocation.position.x, selfLocation.position.y + 1, selfLocation.position.z),
                 selfLocation.rotation);
             blood.transform.parent = null;
             Destroy(gameObject);
