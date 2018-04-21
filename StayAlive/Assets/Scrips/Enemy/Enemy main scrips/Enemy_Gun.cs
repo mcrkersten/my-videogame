@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(DamageAmount))]
+[RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(EnemyResponse))]
+
 public class Enemy_Gun : MonoBehaviour
 {   
     private Transform myTransform;
-    [SerializeField]
     private Animator animator;
     private Transform selfLocation;
     private float fireTimer;
@@ -58,7 +61,7 @@ public class Enemy_Gun : MonoBehaviour
         go = GameObject.FindGameObjectWithTag("Player");
         if (go == null)
         {
-            //THIS IS NOT THE PLAYER YOU ARE LOOKING FOR
+            return;
         }         
         else if (MoveInVision.moveAss == true)
         {
@@ -75,7 +78,7 @@ public class Enemy_Gun : MonoBehaviour
             }
             if (spawnmanager == null)
             {
-                //NOTHING
+                return;
             }
             else
             {

@@ -30,98 +30,43 @@ public class UImask : MonoBehaviour {
 
     void HPMask()
     {
-        if (stats.health == 0)
+        for (int i = 0; i < HP.Length; i++)
+        {
+            if(stats.health - 1 < i)
+            {
+                HP[i].enabled = false;
+            }
+            for (int x = 0; x < stats.health; x++)
+            {
+                HP[x].enabled = true;
+            }
+            accent1[i].enabled = false;
+            accent1[stats.health - 1].enabled = true;          
+        }
+        if(stats.health == 0)
         {
             HP[0].enabled = false;
-            accent1[0].enabled = false;
-        }
-        if (stats.health == 1)
-        {
-            HP[1].enabled = false;
-
-            accent1[1].enabled = false;
-            accent1[0].enabled = true;
-        }
-        if (stats.health == 2)
-        {
-            HP[2].enabled = false;
-
-            accent1[2].enabled = false;
-            accent1[1].enabled = true;
-        }
-        if (stats.health == 3)
-        {
-            HP[3].enabled = false;
-
-            accent1[3].enabled = false;
-            accent1[2].enabled = true;
-        }
-        if (stats.health == 4)
-        {
-            HP[4].enabled = false;
-
-            accent1[4].enabled = false;
-            accent1[3].enabled = true;
-        }
-        if (stats.health == 5)
-        {
-            accent1[4].enabled = true;
         }
     }
 
     void ManaMask()
     {
-        if(stats.mana == 0)
+        for (int i = 0; i < mana.Length; i++)
+        {
+            if (stats.mana - 1 < i)
+            {
+                mana[i].enabled = false;
+            }
+            for (int x = 0; x < stats.mana; x++)
+            {
+                mana[x].enabled = true;
+            }
+            accent2[i].enabled = false;
+            accent2[stats.mana - 1].enabled = true;
+        }
+        if (stats.mana == 0)
         {
             mana[0].enabled = false;
-            accent2[0].enabled = false;
-
-        }
-        if (stats.mana == 1)
-        {
-            mana[0].enabled = true;
-            mana[1].enabled = false;
-
-            accent2[0].enabled = true;
-            accent2[1].enabled = false;
-
-        }
-        if (stats.mana == 2)
-        {
-            mana[1].enabled = true;
-            mana[2].enabled = false;
-
-            accent2[1].enabled = true;
-            accent2[2].enabled = false;
-
-            accent2[0].enabled = false;
-
-        }
-        if (stats.mana == 3){
-            mana[2].enabled = true;
-            mana[3].enabled = false;
-
-            accent2[2].enabled = true;
-            accent2[3].enabled = false;
-
-            accent2[1].enabled = false;
-        }
-        if(stats.mana == 4)
-        {
-            mana[3].enabled = true;
-            mana[4].enabled = false;
-
-            accent2[3].enabled = true;
-            accent2[4].enabled = false;
-
-            accent2[2].enabled = false;
-        }
-        if(stats.mana == 5)
-        {
-            mana[4].enabled = true;
-            accent2[4].enabled = true;
-
-            accent2[3].enabled = false;
         }
     }
 }

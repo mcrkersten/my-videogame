@@ -70,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1672302742839512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.934272, y: -0.3405161, z: 39.894913}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 4313958961838426}
@@ -227,6 +227,7 @@ MonoBehaviour:
   smokePrefab: {fileID: 1272416188072722, guid: bf0ec9cfe8f618244925c45a51241378,
     type: 2}
   BulletPosition: {fileID: 0}
+  isShot: 0
   Source: {fileID: 82973593576529248}
   AudioHit: {fileID: 8300000, guid: 32922032133e03c41ad94d11b4390bc1, type: 3}
   AudioEndLife: {fileID: 8300000, guid: eed8d4c274e92274091e2e801894a1bf, type: 3}
@@ -271,7 +272,7 @@ ParticleSystem:
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
-  useRigidbodyForVelocity: 1
+  useRigidbodyForVelocity: 0
   startDelay:
     serializedVersion: 2
     minMaxState: 0

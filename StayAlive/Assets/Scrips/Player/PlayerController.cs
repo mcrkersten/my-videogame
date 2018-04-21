@@ -73,11 +73,15 @@ public class PlayerController : MonoBehaviour
         transform.Translate(new Vector3(Movespeed, 0, Movespeed) * Input.GetAxis("Horizontal"));
     }
 
-    void OnTriggerEnter(Collider portal)
+    void OnTriggerEnter(Collider trigger)
     {
-        if (portal.tag == "NextLevel")
+        if (trigger.tag == "NextLevel")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        if (trigger.tag == "healthItem")
+        {
+            PS.health = PS.health + 1;
         }
     }
 

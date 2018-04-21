@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(DamageAmount))]
+[RequireComponent(typeof(AudioSource))]
 public class Enemy_Base : MonoBehaviour
 {
     private Transform target;
@@ -60,7 +62,7 @@ public class Enemy_Base : MonoBehaviour
         GameObject go = GameObject.FindGameObjectWithTag("Player");
         if (go == null)
         {
-            //NOTHING
+            return;
         }
         else
         {

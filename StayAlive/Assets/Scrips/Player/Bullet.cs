@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour {
 
     public GameObject smokePrefab;
     public Transform BulletPosition;
-
+    public bool isShot;
     [Header("Audio settings")]
     public AudioSource Source;
     public AudioClip AudioHit;
@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour {
     private void Update()
     {
         timePassed = timePassed + Time.deltaTime;
-        if(timePassed > timer)
+        if(timePassed > timer && isShot == true)
         {
             BulletPosition = gameObject.transform;
             playSound(0);
@@ -40,7 +40,7 @@ public class Bullet : MonoBehaviour {
                 playSound(1);
                 transform.DetachChildren();
             }
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
     }
 

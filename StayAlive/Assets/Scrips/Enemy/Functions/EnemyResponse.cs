@@ -14,7 +14,6 @@ public class EnemyResponse : MonoBehaviour {
         _lineOfSight = GetComponentInChildren<LineOfSight>();
     }
 
-
     void Update()
     {
         if (_lineOfSight.SeeByTag("Player"))

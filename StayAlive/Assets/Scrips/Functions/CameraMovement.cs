@@ -5,6 +5,8 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour {
     [SerializeField]
     private Transform follow;
+    public float ExtraOnX;
+    public float ExtraOnY;
 
 	// Use this for initialization
 	void Start () {
@@ -16,12 +18,12 @@ public class CameraMovement : MonoBehaviour {
         follow = GameObject.FindGameObjectWithTag("Player").transform;
         if (follow == null)
         {
-            //notnhing
+            return;
         }
         else
         {
             transform.position = Vector3.Lerp(transform.position, 
-                new Vector3 (follow.position.x, follow.position.y, 
+                new Vector3 (follow.position.x + ExtraOnX, follow.position.y + ExtraOnY, 
                 follow.position.z), 0.01f);
         }       
     }
