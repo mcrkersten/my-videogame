@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
                 Physics.IgnoreLayerCollision(9, 10, false);
             }
         }
-        Physics.IgnoreCollision(ignore,portal);
+        Physics.IgnoreCollision(ignore, portal);
     }
 
 
@@ -82,6 +82,7 @@ public class PlayerController : MonoBehaviour
         if (trigger.tag == "healthItem")
         {
             PS.health = PS.health + 1;
+            Destroy(trigger.gameObject);
         }
     }
 
