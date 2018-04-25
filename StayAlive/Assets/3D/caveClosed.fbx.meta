@@ -1,0 +1,179 @@
+fileFormatVersion: 2
+guid: bae2389021e333f4b9eb372eee2693a3
+timeCreated: 1524520921
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: pCube2
+    100004: pCube3
+    100006: pCube5
+    100008: pCube6
+    100010: pCube9
+    100012: pPipe1
+    100014: pPipe2
+    100016: group3
+    100018: group4
+    100020: group5
+    100022: group6
+    100024: polySurface1
+    100026: polySurface2
+    100028: Boog
+    100030: Inside
+    100032: Outside
+    100034: Steen1
+    100036: Steen2
+    100038: Steen3
+    100040: Steen4
+    400000: //RootNode
+    400002: pCube2
+    400004: pCube3
+    400006: pCube5
+    400008: pCube6
+    400010: pCube9
+    400012: pPipe1
+    400014: pPipe2
+    400016: group3
+    400018: group4
+    400020: group5
+    400022: group6
+    400024: polySurface1
+    400026: polySurface2
+    400028: Boog
+    400030: Inside
+    400032: Outside
+    400034: Steen1
+    400036: Steen2
+    400038: Steen3
+    400040: Steen4
+    2100000: lambert1
+    2300000: pCube2
+    2300002: pCube3
+    2300004: pCube5
+    2300006: pCube6
+    2300008: pCube9
+    2300010: pPipe1
+    2300012: pPipe2
+    2300014: polySurface1
+    2300016: polySurface2
+    2300018: Boog
+    2300020: Inside
+    2300022: Outside
+    2300024: Steen1
+    2300026: Steen2
+    2300028: Steen3
+    2300030: Steen4
+    3300000: pCube2
+    3300002: pCube3
+    3300004: pCube5
+    3300006: pCube6
+    3300008: pCube9
+    3300010: pPipe1
+    3300012: pPipe2
+    3300014: polySurface1
+    3300016: polySurface2
+    3300018: Boog
+    3300020: Inside
+    3300022: Outside
+    3300024: Steen1
+    3300026: Steen2
+    3300028: Steen3
+    3300030: Steen4
+    4300000: pCube9
+    4300002: pPipe1
+    4300004: pPipe2
+    4300006: pCube6
+    4300008: pCube5
+    4300010: pCube2
+    4300012: pCube3
+    4300014: polySurface1
+    4300016: polySurface2
+    4300018: Steen1
+    4300020: Steen2
+    4300022: Steen3
+    4300024: Steen4
+    4300026: Boog
+    4300028: Inside
+    4300030: Outside
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
