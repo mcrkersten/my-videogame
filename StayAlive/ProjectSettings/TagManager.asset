@@ -13,6 +13,7 @@ TagManager:
   - PlayerStats
   - CameraTrigger
   - healthItem
+  - Fade
   layers:
   - Default
   - TransparentFX

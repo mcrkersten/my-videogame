@@ -61,8 +61,14 @@ public class PlayerController : MonoBehaviour
                 //RESET ENEMY COLLISION
                 Physics.IgnoreLayerCollision(9, 10, false);
             }
+        }if (portal == null)
+        {
+            return;
         }
-        Physics.IgnoreCollision(ignore, portal);
+        else
+        {
+            Physics.IgnoreCollision(ignore, portal);
+        }      
     }
 
 

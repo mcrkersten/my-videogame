@@ -6,13 +6,16 @@ public class CameraTrigger : MonoBehaviour {
 
     public Animator cameraObject;
     public GameObject warnignSign;
+    public Fade fade;
     public int maxAlpha;
+
 
     private void OnTriggerEnter(Collider trig)
     {
         if (trig.gameObject.tag == "CameraTrigger")
         {
-            cameraObject.SetTrigger("Continue");
+            
+            cameraObject.SetTrigger("FirstMove");
 
             if(warnignSign.GetComponent<SpriteRenderer>().enabled == false)
             {
@@ -24,6 +27,11 @@ public class CameraTrigger : MonoBehaviour {
                 StartCoroutine(FadeTo(0f, 1.0f));
             }
             Destroy(trig);
+            return;
+        }
+        if(trig.gameObject.tag == "Fade")
+        {
+            fade.Fading(true);
         }
     }
 
