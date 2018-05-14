@@ -7,6 +7,7 @@ public class CameraMovement : MonoBehaviour {
     private Transform follow;
     public float ExtraOnX;
     public float ExtraOnY;
+    public float lerpSpeed = 0.01f;
 
 	// Use this for initialization
 	void Start () {
@@ -23,8 +24,9 @@ public class CameraMovement : MonoBehaviour {
         else
         {
             transform.position = Vector3.Lerp(transform.position, 
-                new Vector3 (follow.position.x + ExtraOnX, follow.position.y + ExtraOnY, 
-                follow.position.z), 0.01f);
+                new Vector3 (follow.position.x + ExtraOnX, 
+                follow.position.y + ExtraOnY, 
+                follow.position.z), lerpSpeed);
         }       
     }
 }
