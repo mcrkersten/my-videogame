@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     private float timer2;
 
     [Header("Start settings")]
-    public float Movespeed = .1f;
+    public float Movespeed;
 
     [Header("Collisions to ignore")]
     public Collider ignore;
@@ -33,8 +33,9 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+
         if (canMove == true)
         {
             Movement();
