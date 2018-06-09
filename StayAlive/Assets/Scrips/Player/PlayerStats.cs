@@ -12,14 +12,35 @@ public class PlayerStats : MonoBehaviour
     public int health;
     public int mana;
     public float ManaRegenPerSecond;
+    [HideInInspector]
     public float timer;
+    public static PlayerStats instance = null;
 
+    [Header("World atributes")]
 
-    // Use this for initialization
+    public int gateNumber;
+    public int levelNumber;
+    public string dungeonName;
+
+    [HideInInspector]
+    public int levelLength;
+    [HideInInspector]
+    public string levelName;
+
+    public List<bool> liberation = new List<bool>();
+    
     void Awake()
     {
+        levelNumber = 0;
+        if (instance == null)
+            instance = this;
+
+        else if (instance != this)
+            Destroy(gameObject);
+
+        DontDestroyOnLoad(gameObject);
         timer = ManaRegenPerSecond;
-        DontDestroyOnLoad(transform.gameObject);
+
     }
 
 

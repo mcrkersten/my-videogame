@@ -16,17 +16,19 @@ public class CameraMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        follow = GameObject.FindGameObjectWithTag("Player").transform;
-        if (follow == null)
+        
+        if (GameObject.FindGameObjectWithTag("Player") != null)
         {
-            return;
+            follow = GameObject.FindGameObjectWithTag("Player").transform;
         }
         else
         {
-            transform.position = Vector3.Lerp(transform.position, 
-                new Vector3 (follow.position.x + ExtraOnX, 
-                follow.position.y + ExtraOnY, 
-                follow.position.z), lerpSpeed);
-        }       
+            follow = GameObject.FindGameObjectWithTag("Respawn").transform;
+        }
+
+        transform.position = Vector3.Lerp(transform.position, 
+        new Vector3 (follow.position.x + ExtraOnX, 
+        follow.position.y + ExtraOnY, 
+        follow.position.z), lerpSpeed);    
     }
 }

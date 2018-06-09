@@ -25,6 +25,10 @@ public class Enemy_Warhog : MonoBehaviour {
     public Animator Detection;
     public GameObject bloodFab;
 
+    [Header("Protection")]
+    public int health;
+    public int shields;
+
     [Header("Warhog Objects")]
     public int ListSize;
     public List<GameObject> bullets = new List<GameObject>();
@@ -51,7 +55,7 @@ public class Enemy_Warhog : MonoBehaviour {
                 mainBulletHolder.transform.rotation,
                 mainBulletHolder.transform));
             float toRotate = 360 / ListSize;
-            rotateBulletHolders(toRotate);
+            RotateBulletHolders(toRotate);
         }
     }
 
@@ -65,7 +69,7 @@ public class Enemy_Warhog : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        rotateBulletHolders(bulletRotation);
+        RotateBulletHolders(bulletRotation);
         go = GameObject.FindGameObjectWithTag("Player");
         if (go == null)
         {
@@ -113,11 +117,12 @@ public class Enemy_Warhog : MonoBehaviour {
                 new Vector3(selfLocation.position.x, selfLocation.position.y + 1, selfLocation.position.z),
                 selfLocation.rotation);
             blood.transform.parent = null;
+
             Destroy(gameObject);
         }
     }
 
-    private void rotateBulletHolders(float rotation)
+    private void RotateBulletHolders(float rotation)
     {
         foreach(GameObject item in bullets)
         {

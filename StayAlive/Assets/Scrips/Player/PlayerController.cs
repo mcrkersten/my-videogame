@@ -5,11 +5,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField]
     private PlayerStats PS;
     private bool canMove = true;
+    public bool cantMoveDialog = false;
     private bool targetable = true;
     private float timer1;
     private float timer2;
+
+    public SceneLoader sceneLoader;
 
     [Header("Start settings")]
     public float Movespeed;
@@ -22,25 +26,38 @@ public class PlayerController : MonoBehaviour
     public Animator hands;
     public Animator body;
 
+    private string levelName;
+    private string portalName;
+    [SerializeField]
+    private int levelLength;
+
 
     // Use this for initialization
-    void Start()
-    {
+    void Awake()
+    {       
         PS = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<PlayerStats>();
-        portal = GameObject.FindGameObjectWithTag("NextLevel").GetComponent<Collider>();
+        levelLength = PS.levelLength;
         timer1 = 0;
         timer2 = 0;
+        if (GameObject.FindGameObjectWithTag("SceneLoader") != null)
+        {
+            sceneLoader = GameObject.FindGameObjectWithTag("SceneLoader").GetComponent<SceneLoader>();
+        }
+        if (GameObject.FindGameObjectWithTag("NextLevel") != null)
+        {
+            portal = GameObject.FindGameObjectWithTag("NextLevel").GetComponent<Collider>();
+        }
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
 
-        if (canMove == true)
+        if (canMove == true && cantMoveDialog == false)
         {
             Movement();
         }
-        else
+        else if(canMove == false)
         {
             timer1 = timer1 + Time.deltaTime;
             if (timer1 > .6)
@@ -84,13 +101,37 @@ public class PlayerController : MonoBehaviour
     {
         if (trigger.tag == "NextLevel")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            if(PS.levelLength > PS.levelNumber)
+            {
+                SceneManager.LoadScene(PS.dungeonName + PS.levelNumber);
+                PS.levelNumber++;
+            }
+            else
+            {
+                PS.levelNumber = 0;
+                PS.liberation[PS.gateNumber] = true;
+                sceneLoader.loadSceneGO = true;
+            }
+            
         }
+        
+        if(trigger.tag == "Gate")
+        {
+            PS.levelNumber = 0;
+            PS.gateNumber = trigger.gameObject.GetComponent<LevelSelector>().GateNumber;
+            PS.dungeonName = trigger.gameObject.GetComponent<LevelSelector>().dungeonName;
+            PS.levelLength = trigger.gameObject.GetComponent<LevelSelector>().levelLength;
+            sceneLoader.scene = trigger.gameObject.GetComponent<LevelSelector>().levelName;
+            PS.levelName = sceneLoader.scene;
+            sceneLoader.loadSceneGO = true;          
+        }
+
         if (trigger.tag == "healthItem")
         {
             PS.health = PS.health + 1;
             Destroy(trigger.gameObject);
         }
+
     }
 
     void OnCollisionEnter(Collision c)

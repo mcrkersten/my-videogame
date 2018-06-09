@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 114309797589142740}
   m_Layer: 10
   m_Name: Enemy_Player
-  m_TagString: Untagged
+  m_TagString: rotation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -653,7 +653,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1653738318264880}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.53141534, y: 0.06999999, z: 4.772057}
+  m_LocalPosition: {x: -22.45311, y: 0.066337585, z: 21.772797}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4354544620304258}
@@ -1393,11 +1393,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac94bc78a49224478b7c20a9a90585f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PS: {fileID: 0}
+  cantMoveDialog: 0
+  sceneLoader: {fileID: 0}
   Movespeed: 0.1
   ignore: {fileID: 65367559082167316}
   portal: {fileID: 0}
   hands: {fileID: 95106251911233908}
   body: {fileID: 95978053934645350}
+  levelLength: 0
 --- !u!114 &114273773221762940
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -57,9 +57,10 @@ GameObject:
   - component: {fileID: 114162245827568524}
   - component: {fileID: 114848461914759868}
   - component: {fileID: 81997052298303198}
+  - component: {fileID: 114582089939846420}
   m_Layer: 0
   m_Name: PlayerSpawn
-  m_TagString: Untagged
+  m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,7 +147,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1469353037972192}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -2.16}
+  m_LocalPosition: {x: -25.47229, y: 0.88, z: 38.024384}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4017137066806644}
@@ -250,6 +251,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeWait: 2.17
+--- !u!114 &114582089939846420
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1469353037972192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92e914925b89b6f4a92ca472cd81966e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gateNames:
+  - {fileID: 0}
+  - {fileID: 0}
+  playerStats: {fileID: 0}
 --- !u!114 &114848461914759868
 MonoBehaviour:
   m_ObjectHideFlags: 1

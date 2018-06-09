@@ -62,7 +62,11 @@ public class UImask : MonoBehaviour {
                 mana[x].enabled = true;
             }
             accent2[i].enabled = false;
-            accent2[stats.mana - 1].enabled = true;
+            if(stats.mana > 0)
+            {
+                accent2[stats.mana - 1].enabled = true;
+            }
+            
         }
         if (stats.mana == 0)
         {

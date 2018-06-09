@@ -14,6 +14,9 @@ TagManager:
   - CameraTrigger
   - healthItem
   - Fade
+  - Gate
+  - SceneLoader
+  - rotation
   layers:
   - Default
   - TransparentFX

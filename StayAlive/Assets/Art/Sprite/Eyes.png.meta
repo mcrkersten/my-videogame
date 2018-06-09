@@ -9,6 +9,7 @@ TextureImporter:
     21300004: Eyes_2
     21300006: Eyes_3
     21300008: Eyes_4
+    21300010: Eyes_5
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -104,7 +105,7 @@ TextureImporter:
         serializedVersion: 2
         x: 289
         y: 242
-        width: 159
+        width: 160
         height: 121
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -150,6 +151,20 @@ TextureImporter:
         height: 121
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eyes_5
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 257
+        width: 143
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
