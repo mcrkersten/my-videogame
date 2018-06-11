@@ -34,7 +34,7 @@ public class RotateToPlayer : MonoBehaviour {
     public int totalTextLines;
     public string[] dialog;
     public GameObject talkIndicator;
-
+    public float resetAngle;
     public GameObject playerStandPos;
 
     private bool fade = false;
@@ -105,8 +105,8 @@ public class RotateToPlayer : MonoBehaviour {
             {
                 transform.eulerAngles = new Vector3(0.1f, transform.eulerAngles.y, 0.1f);
 
-                transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, new Vector3(0, 100, 0), .05f);
-                if (this.transform.eulerAngles.y > 99 && this.transform.eulerAngles.y < 101)
+                transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, new Vector3(0, resetAngle, 0), .05f);
+                if (this.transform.eulerAngles.y > resetAngle - 1 && this.transform.eulerAngles.y < resetAngle + 1)
                 {
                     if (aniOnce == true)
                     {
@@ -167,12 +167,20 @@ public class RotateToPlayer : MonoBehaviour {
         talkCam.enabled = false;
         target.GetComponent<PlayerController>().cantMoveDialog = false;
         playerRotator.enabled = true;
-        fade = true;
+        //fade = true;
     }
 
     IEnumerator FadeTo()
     {
-        yield return new WaitForSeconds(.4f);
+        for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / .4f)
+        {
+            //Vector2 size = new Vector2(0, Mathf.Lerp(maincam.orthographicSize, 10, t));
+            float size = maincam.orthographicSize - .15f;
+
+            maincam.orthographicSize = size;
+            yield return null;
+        }
+        maincam.orthographicSize = 13;
         CamSwitch1();
     }
 

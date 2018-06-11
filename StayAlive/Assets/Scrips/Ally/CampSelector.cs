@@ -19,15 +19,20 @@ public class CampSelector : MonoBehaviour {
             PS = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<PlayerStats>();
             oncePS = true;
 
-            if (PS.liberation.Count == campNumber)
+            int tenpSize = PS.liberation.Count;
+            print(tenpSize);
+
+            if (tenpSize  > campNumber)
             {
-                PS.liberation.Add(false);     
+                print("Add Camp");
+                PS.liberation.Add(false);
             }
         }
     }
 	
 	// Update is called once per frame
 	void Update () {
+
         if (PS.liberation[campNumber] == false)
         {
             liberated.SetActive(false);

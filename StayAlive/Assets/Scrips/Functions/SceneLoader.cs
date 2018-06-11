@@ -9,6 +9,7 @@ public class SceneLoader : MonoBehaviour
     private bool loadScene = false;
     public bool loadSceneGO = false;
     public GameObject block;
+    public GameObject loadAni;
     public string scene;
     [SerializeField]
     private Text loadingText;
@@ -27,6 +28,7 @@ public class SceneLoader : MonoBehaviour
             loadingText.text = "Loading";
             proTip.text = "Having trouble with the game? Try winning!";
             block.SetActive(true);
+            loadAni.SetActive(true);
             image.SetActive(true);
 
             StartCoroutine(LoadNewScene());
