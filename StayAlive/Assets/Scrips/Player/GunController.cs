@@ -84,7 +84,7 @@ public class GunController : MonoBehaviour {
 
         //guns.transform.eulerAngles = new Vector3(transform.eulerAngles.x, Mathf.Atan2(x, -y) * Mathf.Rad2Deg - 45, guns.transform.eulerAngles.z);
 
-        if (x != 0.0f || y != 0.0f)
+        if (x != 0.05f && y != 0.05f)
         {
             angle = Mathf.Atan2(y, x) * Mathf.Rad2Deg;
             gameObject.transform.eulerAngles = new Vector3 (0,angle + 45,0);

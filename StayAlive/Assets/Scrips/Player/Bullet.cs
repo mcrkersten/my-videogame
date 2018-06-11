@@ -32,9 +32,9 @@ public class Bullet : MonoBehaviour {
     {
         BulletPosition = gameObject.transform;
 
-        if (coll.gameObject.tag == "Player" || coll.gameObject.tag == "Enemy" || coll.gameObject.tag == "Wall" || coll.gameObject.tag == "EnemyBullet" || coll.gameObject.tag == "Bullet")
+        if (coll.gameObject.tag == "Player" || coll.gameObject.tag == "Enemy" || coll.gameObject.tag == "Wall" || coll.gameObject.tag == "EnemyBullet" || coll.gameObject.tag == "Bullet" || coll.gameObject.tag == "Shield")
         {
-            if (coll.gameObject.tag == "Player" || coll.gameObject.tag == "Wall" || coll.gameObject.tag == "EnemyBullet" || coll.gameObject.tag == "Enemy")
+            if (coll.gameObject.tag == "Player" || coll.gameObject.tag == "Wall" || coll.gameObject.tag == "EnemyBullet" || coll.gameObject.tag == "Enemy" || coll.gameObject.tag == "Shield")
             {
                 smoke();
                 playSound(1);

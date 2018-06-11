@@ -109,7 +109,7 @@ public class PlayerController : MonoBehaviour
             else
             {
                 PS.levelNumber = 0;
-                PS.liberation[PS.gateNumber] = true;
+                PS.liberation[PS.gateNumber - 1] = true;
                 sceneLoader.loadSceneGO = true;
             }
             
