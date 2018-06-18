@@ -30,6 +30,9 @@ public class GunController : MonoBehaviour {
     public AudioSource gunSource;
     public AudioClip gunAudio;
 
+    [Header("Ultimate Settings")]
+    public bool UltimateActive;
+    public List<GameObject> bulletSpawn = new List<GameObject>();
 
     // Update is called once per frame
     void Start()
@@ -41,6 +44,15 @@ public class GunController : MonoBehaviour {
     }
 
     void FixedUpdate () {
+
+        if(PS.mana < 5)
+        {
+            UltimateActive = false;
+        }
+        else
+        {
+            UltimateActive = true;
+        }
         RotateController();
         fireTimer = fireTimer + Time.deltaTime;
         if (Input.GetAxis("joystick button 10") > 0 || Input.GetKey("space"))
@@ -74,6 +86,13 @@ public class GunController : MonoBehaviour {
                     gun1 = true;
                 }
                 fireTimer = 0;
+            }
+        }
+        if(Input.GetButtonDown("bumper") && UltimateActive == true)
+        {
+            foreach(GameObject position in bulletSpawn)
+            {
+                FireSpeciale1(position);
             }
         }
     }
@@ -117,6 +136,20 @@ public class GunController : MonoBehaviour {
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeed;
 
         // Destroy the bullet after 2 seconds
+        Destroy(bullet, bulletTime);
+    }
+
+    void FireSpeciale1(GameObject spawnPos)
+    {
+        // Create the Bullet from the Bullet Prefab
+        var bullet = (GameObject)Instantiate(
+            bulletPrefab,
+            spawnPos.transform.position,
+            spawnPos.transform.rotation);
+
+        // Add velocity to the bullet
+        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeed;
+
         Destroy(bullet, bulletTime);
     }
 
