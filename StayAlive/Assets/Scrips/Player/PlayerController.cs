@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -31,6 +32,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private int levelLength;
 
+    [Header("Animation on hit")]
+    Image quiteGameUI;
+
 
     // Use this for initialization
     void Awake()
@@ -47,11 +51,53 @@ public class PlayerController : MonoBehaviour
         {
             portal = GameObject.FindGameObjectWithTag("NextLevel").GetComponent<Collider>();
         }
+        if (GameObject.FindGameObjectWithTag("UI") != null)
+        {
+            quiteGameUI = GameObject.FindGameObjectWithTag("UI").GetComponent<Image>();
+        }
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("joystick button 7"))
+        {
+            if (quiteGameUI.enabled)
+            {
+                Time.timeScale = 1;
+                quiteGameUI.enabled = false;
+            }
+            else
+            {
+                Time.timeScale = 0.25f;
+                quiteGameUI.enabled = true;
+            }
+        }
+        if(quiteGameUI.enabled && Input.GetButtonDown("joystick button 1"))
+        {
+            Time.timeScale = 1;
+            quiteGameUI.enabled = false;
+        }
+        if (quiteGameUI.enabled && Input.GetButtonDown("joystick button 0"))
+        {
+            Application.Quit();
+        }
+    }
     // Update is called once per frame
     void FixedUpdate()
-    {
+    {      
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (quiteGameUI.enabled)
+            {
+                Time.timeScale = 1;
+                quiteGameUI.enabled = false;
+            }
+            else
+            {
+                Time.timeScale = 0.25f;
+                quiteGameUI.enabled = true;
+            }            
+        }
 
         if (canMove == true && cantMoveDialog == false)
         {

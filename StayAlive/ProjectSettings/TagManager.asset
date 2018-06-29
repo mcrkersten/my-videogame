@@ -18,6 +18,7 @@ TagManager:
   - SceneLoader
   - rotation
   - Shield
+  - UI
   layers:
   - Default
   - TransparentFX
