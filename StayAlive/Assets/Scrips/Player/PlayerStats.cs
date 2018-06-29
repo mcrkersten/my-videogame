@@ -26,7 +26,7 @@ public class PlayerStats : MonoBehaviour
     public int levelLength;
     [HideInInspector]
     public string levelName;
-
+    public bool ActivateUltimate;
     public List<bool> liberation = new List<bool>();
     
     void Awake()

@@ -16,6 +16,13 @@ public class UImask : MonoBehaviour {
     [Header("Playerstats")]
     public PlayerStats stats;
 
+    [Header("UltimateColors")]
+    public Color ultimate;
+    public Color normal;
+    public Material ultimateMat;
+    public Material normalMat;
+    public GameObject particles;
+
     // Use this for initialization
     void Awake () {
         stats = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<PlayerStats>();
@@ -25,7 +32,15 @@ public class UImask : MonoBehaviour {
 	void Update ()
     {
         HPMask();
-        ManaMask();
+
+        if (stats.mana < 5)
+        {
+            ManaMask();
+        }
+        else
+        {
+            Ultimate();
+        }       
     }
 
     void HPMask()
@@ -53,6 +68,10 @@ public class UImask : MonoBehaviour {
     {
         for (int i = 0; i < mana.Length; i++)
         {
+            accent2[i].color = normal;
+            accent2[i].material = normalMat;
+            particles.SetActive(false);
+
             if (stats.mana - 1 < i)
             {
                 mana[i].enabled = false;
@@ -73,4 +92,19 @@ public class UImask : MonoBehaviour {
             mana[0].enabled = false;
         }
     }
+
+    void Ultimate()
+    {
+        if(stats.ActivateUltimate == true)
+        {
+            for (int i = 0; i < mana.Length; i++)
+            {
+                particles.SetActive(true);
+                mana[4].enabled = true;
+                accent2[i].color = ultimate;
+                accent2[i].material = ultimateMat;
+                accent2[i].enabled = true;
+            }
+        }
+    }        
 }

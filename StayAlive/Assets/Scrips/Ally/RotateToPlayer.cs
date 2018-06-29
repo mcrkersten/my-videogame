@@ -28,7 +28,7 @@ public class RotateToPlayer : MonoBehaviour {
     public float talkdistance;
     public Canvas canvas;
     public GameObject fader;
-
+    private PlayerStats PS;
     public GameObject ui;    
     public Text text;
     public int totalTextLines;
@@ -42,13 +42,15 @@ public class RotateToPlayer : MonoBehaviour {
     private int page;
     private float currentDist;
 
-
+    [Header("UltimateActivator")]
+    public bool ActivateUltimate;
 
     // Use this for initialization
     void Start () {
         aniOnce = false;
         animator = GetComponent<Animator>();
-	}
+        PS = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<PlayerStats>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -120,7 +122,7 @@ public class RotateToPlayer : MonoBehaviour {
         }     
     }
     public void Talk()
-    {
+    {     
         if (Input.GetKeyDown("joystick button 0") || Input.GetKeyDown("c"))
         {
             ui.SetActive(true);
@@ -135,7 +137,7 @@ public class RotateToPlayer : MonoBehaviour {
             {
                 CamSwitch1();
             }
-            canvas.worldCamera = talkCam;          
+            canvas.worldCamera = talkCam;
         }
     }
 
@@ -182,6 +184,11 @@ public class RotateToPlayer : MonoBehaviour {
         }
         maincam.orthographicSize = 13;
         CamSwitch1();
+
+        if (ActivateUltimate == true)
+        {
+            PS.ActivateUltimate = true;
+        }
     }
 
     IEnumerator FadeFrom()

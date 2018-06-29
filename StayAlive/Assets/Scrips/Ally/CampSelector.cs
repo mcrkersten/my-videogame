@@ -32,7 +32,7 @@ public class CampSelector : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (PS.liberation[campNumber -1] == false)
+        if (PS.liberation[campNumber - 1] == false)
         {
             liberated.SetActive(false);
             nonLiberated.SetActive(true);

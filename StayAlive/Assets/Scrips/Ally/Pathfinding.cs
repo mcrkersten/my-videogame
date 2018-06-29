@@ -8,7 +8,7 @@ public class Pathfinding : MonoBehaviour {
     public Animator animator;
     public float rotationSpeed;
     public float moveSpeed;
-
+    private float currentDist;
     private int current;
 	// Update is called once per frame
 	void Update () {
@@ -19,13 +19,13 @@ public class Pathfinding : MonoBehaviour {
             transform.position += transform.forward * moveSpeed * Time.deltaTime;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(target[current].transform.position - transform.position), rotationSpeed * Time.deltaTime);
         }
+        currentDist = Vector3.Distance(target[current].transform.position, this.transform.position);
 
-        if (transform.position.z < target[current].position.z + .1 && transform.position.x < target[current].position.x + .1)
+        if(currentDist < .5f)
         {
-            current = (current +1) % target.Length;
-            print(current);
+            current++;
         }
-	}
+    }
 
     void OnTriggerEnter(Collider other)
     {

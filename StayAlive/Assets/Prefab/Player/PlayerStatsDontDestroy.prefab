@@ -106,7 +106,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1916315231971780}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8ec998b4f20cbec4d804d65716c08f9c, type: 3}
@@ -201,7 +201,8 @@ MonoBehaviour:
   dungeonName: 
   levelLength: 0
   levelName: 
-  liberation: 00
+  ActivateUltimate: 0
+  liberation: 0000
 --- !u!167 &167752189131920080
 AudioReverbZone:
   m_ObjectHideFlags: 1

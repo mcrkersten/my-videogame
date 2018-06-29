@@ -31,7 +31,7 @@ public class GunController : MonoBehaviour {
     public AudioClip gunAudio;
 
     [Header("Ultimate Settings")]
-    public bool UltimateActive;
+    public bool UltimateReady;
     public List<GameObject> bulletSpawn = new List<GameObject>();
 
     // Update is called once per frame
@@ -47,11 +47,11 @@ public class GunController : MonoBehaviour {
 
         if(PS.mana < 5)
         {
-            UltimateActive = false;
+            UltimateReady = false;
         }
         else
         {
-            UltimateActive = true;
+            UltimateReady = true;
         }
         RotateController();
         fireTimer = fireTimer + Time.deltaTime;
@@ -88,11 +88,12 @@ public class GunController : MonoBehaviour {
                 fireTimer = 0;
             }
         }
-        if(Input.GetButtonDown("bumper") && UltimateActive == true)
+        if(Input.GetButtonDown("bumper") && UltimateReady == true && PS.ActivateUltimate == true)
         {
             foreach(GameObject position in bulletSpawn)
             {
                 FireSpeciale1(position);
+                PS.mana = 0;
             }
         }
     }
